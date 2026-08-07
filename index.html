@@ -1,372 +1,491 @@
-<!DOCTYPE html><html class="dark" lang="pt-BR" style=""><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Erick Rodrigues - Personal Trainer &amp; Bodybuilder</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Hanken+Grotesk:wght@400;700&amp;family=JetBrains+Mono:wght@700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "tertiary-container": "#909191",
-                        "background": "#210e0b",
-                        "tertiary-fixed": "#e2e2e2",
-                        "primary-fixed": "#ffdad4",
-                        "primary": "#ffb4a8",
-                        "on-tertiary-container": "#282a2a",
-                        "secondary": "#c8c6c5",
-                        "surface-container": "#2f1a17",
-                        "on-tertiary-fixed": "#1a1c1c",
-                        "secondary-fixed-dim": "#c8c6c5",
-                        "outline": "#b18780",
-                        "on-tertiary-fixed-variant": "#454747",
-                        "on-secondary-fixed-variant": "#474646",
-                        "on-secondary-container": "#bab8b7",
-                        "surface-bright": "#4c332f",
-                        "on-primary-fixed-variant": "#930100",
-                        "on-primary": "#690100",
-                        "surface-container-high": "#3b2420",
-                        "on-secondary-fixed": "#1c1b1b",
-                        "error-container": "#93000a",
-                        "surface-container-highest": "#472f2b",
-                        "error": "#ffb4ab",
-                        "tertiary": "#c6c6c7",
-                        "primary-fixed-dim": "#ffb4a8",
-                        "surface-tint": "#ffb4a8",
-                        "on-surface": "#ffdad4",
-                        "on-primary-container": "#5c0000",
-                        "surface-variant": "#472f2b",
-                        "surface-container-low": "#2b1613",
-                        "secondary-fixed": "#e5e2e1",
-                        "surface-container-lowest": "#1b0907",
-                        "surface": "#210e0b",
-                        "on-surface-variant": "#ebbbb4",
-                        "on-background": "#ffdad4",
-                        "secondary-container": "#4a4949",
-                        "inverse-surface": "#ffdad4",
-                        "inverse-on-surface": "#422a27",
-                        "inverse-primary": "#c00100",
-                        "tertiary-fixed-dim": "#c6c6c7",
-                        "on-error": "#690005",
-                        "primary-container": "#ff5540",
-                        "on-tertiary": "#2f3131",
-                        "on-secondary": "#313030",
-                        "on-error-container": "#ffdad6",
-                        "surface-dim": "#210e0b",
-                        "outline-variant": "#603e39",
-                        "on-primary-fixed": "#410000"
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0px",
-                        "lg": "0px",
-                        "xl": "0px",
-                        "full": "0px"
-                    },
-                    spacing: {
-                        "lg": "24px",
-                        "gutter": "20px",
-                        "sm": "8px",
-                        "xs": "4px",
-                        "unit": "4px",
-                        "xl": "48px",
-                        "container-max": "1200px",
-                        "md": "16px"
-                    },
-                    fontFamily: {
-                        "display-lg": ["Bebas Neue"],
-                        "headline-md": ["Bebas Neue"],
-                        "button-text": ["Bebas Neue"],
-                        "body-lg": ["Hanken Grotesk"],
-                        "label-caps": ["JetBrains Mono"],
-                        "body-md": ["Hanken Grotesk"],
-                        "headline-lg": ["Bebas Neue"],
-                        "headline-lg-mobile": ["Bebas Neue"]
-                    },
-                    fontSize: {
-                        "display-lg": ["80px", { lineHeight: "80px", letterSpacing: "-0.02em", fontWeight: "400" }],
-                        "headline-md": ["32px", { lineHeight: "32px", fontWeight: "400" }],
-                        "button-text": ["20px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "400" }],
-                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
-                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "700" }],
-                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
-                        "headline-lg": ["48px", { lineHeight: "48px", letterSpacing: "0.02em", fontWeight: "400" }],
-                        "headline-lg-mobile": ["36px", { lineHeight: "36px", fontWeight: "400" }]
-                    }
-                }
-            }
-        }
-    </script>
-<style>
-        body { background-color: #0A0A0A; color: #FFFFFF; }
-        .gradient-primary { background: linear-gradient(135deg, #FF0000 0%, #8B0000 100%); }
-        .card-bg { background-color: #1E1E1E; border: 1px solid #2A2A2A; }
-        .card-header-strip { border-top: 4px solid #FF0000; }
-        .hover-primary-shift:hover { background-color: #FF0000; box-shadow: inset 0 1px 0 rgba(255,255,255,0.2); }
-        .diagonal-stripes { background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,0,0,0.05) 10px, rgba(255,0,0,0.05) 20px); }
-    </style>
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Erick Rodrigues — treinador e fisiculturista profissional.">
+  <title>Erick Rodrigues | Personal Trainer & Bodybuilder</title>
+
+  <!-- Fontes usadas no layout original. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hanken+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="font-body-md text-body-md antialiased selection:bg-primary-container selection:text-white">
-<!-- TopNavBar -->
-<nav class="full-width top-0 z-50 sticky border-b border-outline-variant flat no shadows"><div class="flex justify-between items-center w-full px-lg py-md max-w-container-max mx-auto bg-white">
-<div class="flex-shrink-0 flex items-center justify-center w-full md:w-auto md:justify-start">
-<img alt="Erick Rodrigues Logo" class="h-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGfFQhSt-I1aKmKqGUVa3QX2VxwF7xFnW8JQvTfR_RKL8exr-COa3q4-1v0VVjAcMT32DkNeFWX6u3CzbO9bJmnbdM3Pch9BJk9gCKLwFJSOoJzVH62lFRe6koz1fAJMCcAEJKCIr7aAwkyAK9TIaqpeFSY9fu2jauHD1HXK2NKbbrqXSm1a6gIm9Lh2m1lhXkXahxCsHG7tzfkorAinfdzIcio0_VWYbYQYEIFPFnxUrEVVT0-xwvjZLAzYaecyztyw">
-</div>
-<div class="hidden md:flex space-x-lg items-center">
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-button-text text-button-text uppercase tracking-widest hover:text-primary hover:scale-105 transition-all duration-300" href="#home">Home</a>
-<a class="text-[#1b0907] font-button-text text-button-text uppercase tracking-widest hover:text-primary transition-colors hover:scale-105 duration-300" href="#servicos">Serviços</a>
-<a class="text-[#1b0907] font-button-text text-button-text uppercase tracking-widest hover:text-primary transition-colors hover:scale-105 duration-300" href="#metodologia">Metodologia</a>
-<a class="text-[#1b0907] font-button-text text-button-text uppercase tracking-widest hover:text-primary transition-colors hover:scale-105 duration-300" href="#filosofia">Filosofia</a>
-<a class="text-[#1b0907] font-button-text text-button-text uppercase tracking-widest hover:text-primary transition-colors hover:scale-105 duration-300" href="#feedback">Feedback</a>
-<a class="text-[#1b0907] font-button-text text-button-text uppercase tracking-widest hover:text-primary transition-colors hover:scale-105 duration-300" href="#contato">Contato</a>
-</div>
-<div class="hidden md:flex">
-<a class="gradient-primary text-white font-button-text text-button-text px-lg py-sm uppercase tracking-widest hover-primary-shift transition-all" href="#contato">Agendar</a>
-</div>
-</div></nav>
-<!-- Main Content -->
-<main>
-<!-- Hero Section -->
-<section class="relative min-h-[80vh] flex items-center pt-xl pb-xl overflow-hidden border-b border-outline-variant" id="home">
-<div class="absolute inset-0 z-0">
-<img alt="Hero Background" class="w-full h-full object-cover object-top opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm_ibkVilkPPyaQ9qRm_5ew6PHf1z3QIES0KL-qcoSq-dpCgivuaTTKGAdZjcjuuA1ExCBgHkfqnGr0Q_sx7_iu-ENPrQzn00kvYHDdM9wAq9kwJ5Qh_Sg_LojRd3b4gQj1Qxle8ySLzCSM5qpYlE-g3Ocw8zvpTP-3InmpgIMOUZji0Gk1yhlHr3Wp3h9zNPNazIygUY7m5d5IT6oHXWcLnoHf0TD9F8UoeA-yizjHjqBKd5g0BgC">
-<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
-</div>
-<div class="relative z-10 w-full max-w-container-max mx-auto px-lg grid md:grid-cols-2 gap-xl items-center">
-<div class="flex flex-col gap-lg">
-<div class="inline-flex items-center gap-xs">
-<span class="w-8 h-1 bg-primary-container"></span>
-<span class="font-label-caps text-primary uppercase">Alta Performance</span>
-</div>
-<h1 class="font-display-lg text-display-lg md:text-display-lg text-white uppercase italic leading-none">
-                        TREINAMENTO<br><span class="text-primary-container">DE ELITE</span>
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
-                        Transforme seu corpo com a metodologia de um campeão. Erick Rodrigues, treinador e fisiculturista profissional.
-                    </p>
-<div class="pt-sm">
-<a class="inline-block gradient-primary text-white font-button-text text-button-text px-xl py-md uppercase tracking-widest hover-primary-shift transition-all" href="#servicos">
-                            Começar Agora
-                        </a>
-</div>
-</div>
-</div>
-</section>
-<!-- Serviços Section -->
-<section class="py-xl bg-surface-container-lowest relative diagonal-stripes" id="servicos">
-<div class="max-w-container-max mx-auto px-lg">
-<div class="text-center mb-xl">
-<h2 class="font-headline-lg text-headline-lg md:text-headline-lg text-white uppercase italic">CONSULTORIA <span class="text-primary-container">ESPECIALIZADA</span></h2>
-</div>
-<div class="grid md:grid-cols-2 gap-lg">
-<!-- Presencial -->
-<div class="card-bg card-header-strip group flex flex-col h-full">
-<div class="h-64 relative overflow-hidden">
-<img alt="Consultoria Presencial" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxA61-dw5ozq_PxT5wKvqSqX8W-_UTm2CmFOpgLzQ5_5rJB_etSwokAck4DyBIWbuAwDyVqfCukHiGT43LJRIi7tDaTr52xZgdkdWDjFaTUZ00of-enpOTsZBrsZbtM0R6b-rB0ymqqYJGQYpKyq-TpcPRva6ihq3LsJB-ejtbVRAeQOjeLlQ-Q_V5b-L4TYiM-C8LPOQVKyWjBXBbR0GmpVSu6DD9XQbRLba8kmXkxaGo4VQk-43q">
-<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
-<div class="absolute bottom-0 left-0 p-lg w-full">
-<h3 class="font-headline-md text-headline-md text-white uppercase">Consultoria Presencial</h3>
-</div>
-</div>
-<div class="p-lg flex flex-col flex-grow justify-between gap-lg bg-[#1E1E1E]">
-<p class="font-body-lg text-on-surface-variant">Acompanhamento tático individualizado em academia. Correção biomecânica e intensidade extrema.</p>
-<button class="w-full border-2 border-primary-container text-white font-button-text text-button-text py-sm uppercase tracking-widest hover:bg-primary-container transition-colors">
-                                Saiba Mais
-                            </button>
-</div>
-</div>
-<!-- Online -->
-<div class="card-bg card-header-strip group flex flex-col h-full">
-<div class="h-64 relative overflow-hidden">
-<img alt="Consultoria Online" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcPMS3f-w0QBSaUkN2AH5VouA-lVvlmPZR3Kdfz-0CIc0StRycypuaY1GZuIMc30npCcDREa3mRFdjR8vgg6XO6XEsTg52gNMJ0XcmflaPawVYJ9-ulCkhwYutzYvCgw3gHN8oaxS7wyHYOmS4WAYDpNS0pkbFPZio-mNeRHU7D5S2weXORGxH-u_fBnELtwFbostOXzBlZILza46v2vZqXWv0U0OBt2E0wvl4F0ibYrmOq-LjGGw3">
-<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
-<div class="absolute bottom-0 left-0 p-lg w-full">
-<h3 class="font-headline-md text-headline-md text-white uppercase">Consultoria Online</h3>
-</div>
-</div>
-<div class="p-lg flex flex-col flex-grow justify-between gap-lg bg-[#1E1E1E]">
-<p class="font-body-lg text-on-surface-variant">Treino e dieta personalizados direto no seu celular. Planejamento estratégico onde você estiver.</p>
-<button class="w-full border-2 border-primary-container text-white font-button-text text-button-text py-sm uppercase tracking-widest hover:bg-primary-container transition-colors">
-                                Saiba Mais
-                            </button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Metodologia Section -->
-<section class="py-xl bg-background border-t border-outline-variant" id="metodologia">
-<div class="max-w-container-max mx-auto px-lg">
-<div class="mb-xl">
-<h2 class="font-headline-lg text-headline-lg md:text-headline-lg text-white uppercase italic border-l-4 border-primary-container pl-md">METODOLOGIA DE ALTA PERFORMANCE</h2>
-</div>
-<div class="grid md:grid-cols-4 gap-gutter">
-<!-- Step 1 -->
-<div class="card-bg p-lg relative overflow-hidden group">
-<div class="absolute top-0 right-0 p-md opacity-10 font-display-lg text-display-lg group-hover:text-primary-container transition-colors">01</div>
-<h4 class="font-label-caps text-primary-container uppercase mb-md">Análise</h4>
-<h3 class="font-headline-md text-white uppercase mb-sm">Avaliação Inicial</h3>
-<p class="font-body-md text-on-surface-variant border-t border-outline-variant pt-sm">Análise corporal completa, histórico e mapeamento de objetivos estruturais.</p>
-</div>
-<!-- Step 2 -->
-<div class="card-bg p-lg relative overflow-hidden group">
-<div class="absolute top-0 right-0 p-md opacity-10 font-display-lg text-display-lg group-hover:text-primary-container transition-colors">02</div>
-<h4 class="font-label-caps text-primary-container uppercase mb-md">Estratégia</h4>
-<h3 class="font-headline-md text-white uppercase mb-sm">Planejamento</h3>
-<p class="font-body-md text-on-surface-variant border-t border-outline-variant pt-sm">Desenho tático do macrociclo de treinamento e manipulação dietética.</p>
-</div>
-<!-- Step 3 -->
-<div class="card-bg p-lg relative overflow-hidden group">
-<div class="absolute top-0 right-0 p-md opacity-10 font-display-lg text-display-lg group-hover:text-primary-container transition-colors">03</div>
-<h4 class="font-label-caps text-primary-container uppercase mb-md">Execução</h4>
-<h3 class="font-headline-md text-white uppercase mb-sm">Periodização</h3>
-<p class="font-body-md text-on-surface-variant border-t border-outline-variant pt-sm">Controle de volume, intensidade e densidade para hipertrofia máxima.</p>
-</div>
-<!-- Step 4 -->
-<div class="card-bg p-lg relative overflow-hidden group">
-<div class="absolute top-0 right-0 p-md opacity-10 font-display-lg text-display-lg group-hover:text-primary-container transition-colors">04</div>
-<h4 class="font-label-caps text-primary-container uppercase mb-md">Evolução</h4>
-<h3 class="font-headline-md text-white uppercase mb-sm">Ajustes Mensais</h3>
-<p class="font-body-md text-on-surface-variant border-t border-outline-variant pt-sm">Refinamento contínuo baseado na resposta metabólica e progresso visual.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Filosofia Section -->
-<section class="py-xl relative min-h-[60vh] flex items-center" id="filosofia">
-<div class="absolute inset-0 z-0 bg-[#0A0A0A]">
-<!-- Abstract heavy texture -->
-<div class="absolute inset-0 opacity-20" style="background-image: repeating-linear-gradient(45deg, #2A2A2A 25%, transparent 25%, transparent 75%, #2A2A2A 75%, #2A2A2A), repeating-linear-gradient(45deg, #2A2A2A 25%, #0A0A0A 25%, #0A0A0A 75%, #2A2A2A 75%, #2A2A2A); background-position: 0 0, 10px 10px; background-size: 20px 20px;"></div>
-</div>
-<div class="relative z-10 max-w-3xl mx-auto px-lg text-center">
-<span class="material-symbols-outlined text-primary-container text-display-lg mb-md">fitness_center</span>
-<h2 class="font-headline-lg text-headline-lg md:text-headline-lg text-white uppercase italic mb-lg">MINHA FILOSOFIA</h2>
-<blockquote class="font-body-lg text-body-lg text-on-surface-variant italic mb-lg border-l-4 border-r-4 border-primary-container px-md">
-                    "O sucesso não é um destino, é um hábito. A disciplina brutal e o foco inabalável são as únicas ferramentas que separam o ordinário do extraordinário no fisiculturismo e na vida."
-                </blockquote>
-<p class="font-label-caps text-primary-container uppercase tracking-widest">- Erick Rodrigues</p>
-</div>
-</section>
-<!-- Feedback Section -->
-<section class="py-xl bg-surface-container-lowest border-y border-outline-variant" id="feedback">
-<div class="max-w-container-max mx-auto px-lg">
-<div class="text-center mb-xl">
-<h2 class="font-headline-lg text-headline-lg md:text-headline-lg text-white uppercase italic">RESULTADOS <span class="text-primary-container">REAIS</span></h2>
-</div>
-<div class="grid md:grid-cols-3 gap-lg">
-<div class="card-bg p-lg border-t-2 border-primary-container">
-<div class="flex items-center gap-md mb-md">
-<div class="w-12 h-12 rounded-full bg-[#2A2A2A] flex items-center justify-center">
-<span class="material-symbols-outlined text-primary-container">person</span>
-</div>
-<div>
-<h4 class="font-headline-md text-white text-xl uppercase">Carlos S.</h4>
-<p class="font-label-caps text-on-surface-variant">Atleta Amador</p>
-</div>
-</div>
-<p class="font-body-md text-on-surface-variant">"A precisão da dieta e o ajuste fino nos treinos mudaram meu físico em 12 semanas. Consultoria de outro nível."</p>
-</div>
-<div class="card-bg p-lg border-t-2 border-primary-container">
-<div class="flex items-center gap-md mb-md">
-<div class="w-12 h-12 rounded-full bg-[#2A2A2A] flex items-center justify-center">
-<span class="material-symbols-outlined text-primary-container">person</span>
-</div>
-<div>
-<h4 class="font-headline-md text-white text-xl uppercase">Mariana T.</h4>
-<p class="font-label-caps text-on-surface-variant">Estilo de Vida</p>
-</div>
-</div>
-<p class="font-body-md text-on-surface-variant">"Sempre tive dificuldade em ganhar massa magra. Com a metodologia do Erick, os resultados foram consistentes e duradouros."</p>
-</div>
-<div class="card-bg p-lg border-t-2 border-primary-container">
-<div class="flex items-center gap-md mb-md">
-<div class="w-12 h-12 rounded-full bg-[#2A2A2A] flex items-center justify-center">
-<span class="material-symbols-outlined text-primary-container">person</span>
-</div>
-<div>
-<h4 class="font-headline-md text-white text-xl uppercase">Rafael L.</h4>
-<p class="font-label-caps text-on-surface-variant">Emagrecimento</p>
-</div>
-</div>
-<p class="font-body-md text-on-surface-variant">"Disciplina virou rotina. Perdi 15kg mantendo a massa muscular. O acompanhamento presencial faz toda a diferença."</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Contato Section -->
-<section class="py-xl bg-background relative overflow-hidden" id="contato">
-<div class="absolute right-0 top-0 w-1/3 h-full diagonal-stripes opacity-30 pointer-events-none"></div>
-<div class="max-w-container-max mx-auto px-lg relative z-10">
-<div class="grid md:grid-cols-2 gap-xl">
-<!-- Left: Info & Social -->
-<div class="flex flex-col gap-lg justify-center md:flex-row">
-<div>
-<h2 class="font-headline-lg text-headline-lg md:text-headline-lg text-white uppercase italic leading-tight">VAMOS ALCANÇAR<br><span class="text-primary-container">SEU OBJETIVO</span></h2>
-<p class="font-body-lg text-on-surface-variant mt-md">Entre em contato para agendar uma avaliação ou iniciar sua consultoria online. Vagas limitadas para acompanhamento premium.</p>
-</div>
-<div class="flex flex-col gap-md mt-sm">
-<div class="flex flex-col gap-md flex-grow">
-<a class="flex items-center gap-md card-bg p-md hover:border-primary-container transition-colors group" href="#">
-<span class="material-symbols-outlined text-primary-container group-hover:scale-110 transition-transform">chat</span>
-<span class="font-button-text text-white uppercase tracking-widest">WhatsApp</span>
-</a>
-<a class="flex items-center gap-md card-bg p-md hover:border-primary-container transition-colors group" href="#">
-<span class="material-symbols-outlined text-primary-container group-hover:scale-110 transition-transform">photo_camera</span>
-<span class="font-button-text text-white uppercase tracking-widest">Instagram</span>
-</a>
-</div>
-<button class="gradient-primary text-white font-button-text text-headline-md px-xl py-md uppercase tracking-widest hover-primary-shift transition-all border-4 border-white/20 transform -skew-x-3 shadow-[0_0_30px_rgba(255,0,0,0.3)] flex items-center justify-center mt-md" style="height: 490px; width: 300px; min-width: 300px;">
-CONTRATAR CONSULTORIA
-</button>
-</div>
 
-</div>
-<!-- Right: Form -->
-<div class="card-bg p-lg lg:p-xl card-header-strip">
-<form class="flex flex-col gap-md">
-<div class="flex flex-col gap-xs">
-<label class="font-label-caps text-on-surface-variant uppercase">Nome Completo</label>
-<input class="w-full bg-[#1E1E1E] border border-[#2A2A2A] text-white focus:border-primary-container focus:ring-0 px-md py-sm font-body-md" placeholder="Seu nome" type="text">
-</div>
-<div class="flex flex-col gap-xs">
-<label class="font-label-caps text-on-surface-variant uppercase">Email</label>
-<input class="w-full bg-[#1E1E1E] border border-[#2A2A2A] text-white focus:border-primary-container focus:ring-0 px-md py-sm font-body-md" placeholder="seu@email.com" type="email">
-</div>
-<div class="flex flex-col gap-xs">
-<label class="font-label-caps text-on-surface-variant uppercase">Objetivo / Mensagem</label>
-<textarea class="w-full bg-[#1E1E1E] border border-[#2A2A2A] text-white focus:border-primary-container focus:ring-0 px-md py-sm font-body-md" placeholder="Conte um pouco sobre seu objetivo..." rows="4"></textarea>
-</div>
-<button class="w-full border-2 border-primary-container text-white font-button-text text-button-text py-sm uppercase tracking-widest hover:bg-primary-container transition-colors mt-sm font-bold" type="submit">
-                                Enviar Mensagem
-                            </button>
-</form>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest full-width bottom-0 border-t border-outline-variant flat no shadows">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-lg py-xl max-w-container-max mx-auto gap-lg">
-<div class="flex items-center justify-center">
-<img alt="Erick Rodrigues Logo Footer" class="h-10 object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMn1uh3qXPxWAUI4SUpIjk7he7nidYWCLW9p7YNbZBxwnXgGUPdwY7VAhyDocmTkuX7s9HkbJicRqByonIGGTtAx7kFYg3qOreknbKTYfXO9JQ1AXD3rP_rWhe5lJvRyPC_mFXY5NOdzKMaa1KLV95pbtsReNzhfogCa8p7yDyVOYVrsxXn9Xzga3qjZLvw33DZl1UhHj9OCE6lhHIEqa6YB3y1jZzXeJ1c0Lhodo674kal0hObXdWkcPw4QuGJ2uVCA">
-</div>
-<div class="flex flex-wrap justify-center gap-md">
-<a class="text-on-surface-variant hover:text-white transition-colors duration-200 uppercase tracking-widest font-label-caps text-label-caps hover:underline decoration-primary underline-offset-4" href="#home">Home</a>
-<a class="text-on-surface-variant hover:text-white transition-colors duration-200 uppercase tracking-widest font-label-caps text-label-caps hover:underline decoration-primary underline-offset-4" href="#servicos">Serviços</a>
-<a class="text-on-surface-variant hover:text-white transition-colors duration-200 uppercase tracking-widest font-label-caps text-label-caps hover:underline decoration-primary underline-offset-4" href="#metodologia">Metodologia</a>
-<a class="text-on-surface-variant hover:text-white transition-colors duration-200 uppercase tracking-widest font-label-caps text-label-caps hover:underline decoration-primary underline-offset-4" href="#filosofia">Filosofia</a>
-<a class="text-on-surface-variant hover:text-white transition-colors duration-200 uppercase tracking-widest font-label-caps text-label-caps hover:underline decoration-primary underline-offset-4" href="#feedback">Feedback</a>
-<a class="text-on-surface-variant hover:text-white transition-colors duration-200 uppercase tracking-widest font-label-caps text-label-caps hover:underline decoration-primary underline-offset-4" href="#contato">Contato</a>
-</div>
-<div class="font-body-md text-body-md text-on-surface-variant text-sm">
-                Desenvolvido por DRK
+<body>
+  <!-- Cabeçalho fixo e navegação principal. -->
+  <header class="site-header">
+    <nav class="navigation container" aria-label="Navegação principal">
+      <div>
+        <a class="brand" href="#home" aria-label="Ir para o início">
+          <img src="img/LOGO.png" alt="Erick Rodrigues">
+        </a>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-content" id="main-menu">
+        <a class="active" href="#home">Home</a><a href="#servicos">Serviços</a>
+        <a href="#metodologia">Metodologia</a><a href="#filosofia">Filosofia</a>
+        <a href="#feedback">Feedback</a><a href="#contato">Contato</a>
+      </div>
+      <div>
+        <a class="button button-primary nav-cta" href="#contato">Agendar</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero: a mesma imagem e sobreposição escura do projeto de origem. -->
+    <section class="hero" id="home">
+      <div class="hero-background" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span>Alta Performance</p>
+          <h1>Treinamento<br><em>de elite</em></h1>
+          <p class="lead">Transforme seu corpo com a metodologia de um
+            campeão. Erick Rodrigues, treinador e fisiculturista
+            profissional.</p>
+          <a class="button-hero" href="#servicos">Começar agora</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços oferecidos. -->
+    <section class="services striped-section" id="servicos">
+      <div class="container">
+        <h2 class="section-title center">Consultoria <em>especializada</em></h2>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-image presencial">
+              <h3>Consultoria presencial</h3>
             </div>
-</div>
-</footer>
+            <div class="service-body">
+              <p>Acompanhamento tático individualizado em academia. Correção biomecânica e intensidade extrema.</p>
+              <button commandFor="modal-presencial" command="show-modal" class="saiba-mais" id="open-modal">Saiba
+                mais</button>
 
+              <dialog id="modal-presencial" class="modal" role="dialog" aria-modal="true">
 
-</body></html>
+                <div class="modal-container">
+
+                  <button commandFor="modal-presencial" command="close" class="close-modal" aria-label="Fechar modal">
+                    ✕
+                  </button>
+
+                  <!-- IMAGEM -->
+                  <div class="img-presencial"></div>
+
+                  <!-- CONTEÚDO -->
+                  <div class="modal-content">
+
+                    <!-- TOPO -->
+                    <div class="superior">
+
+                      <h1>
+                        CONSULTORIA <br>
+                        PRESENCIAL
+                      </h1>
+
+                      <span></span>
+
+                      <p class="superior">
+                        Acompanhamento técnico, focado em biomecânica e resultados diretos.
+                        Treinamento desenhado para máxima eficiência.
+                      </p>
+
+                    </div>
+
+                    <!-- BENEFÍCIOS -->
+                    <div class="meio">
+
+                      <div class="conteudo">
+
+                        <img src="img/modal/bat.png" alt="Avaliação Física">
+
+                        <div>
+                          <h2>Avaliação Física</h2>
+                          <p class="meio">
+                            Medição de dobras cutâneas, peso, altura, testes de
+                            flexibilidade e análise do histórico de saúde.
+                          </p>
+                        </div>
+
+                      </div>
+
+                      <div class="conteudo">
+
+                        <img src="img/modal/haltere.png" alt="Prescrição">
+
+                        <div>
+                          <h2>Prescrição e Execução</h2>
+                          <p class="meio">
+                            Criação e demonstração prática de séries voltadas para
+                            musculação, funcional ou aeróbicos.
+                          </p>
+                        </div>
+
+                      </div>
+
+                      <div class="conteudo">
+
+                        <img src="img/modal/man.png" alt="Correção">
+
+                        <div>
+                          <h2>Correção Postural</h2>
+                          <p class="meio">
+                            Ajustes finos no posicionamento durante o movimento para
+                            evitar dores e maximizar o resultado.
+                          </p>
+                        </div>
+
+                      </div>
+
+                      <div class="conteudo">
+
+                        <img src="img/modal/crono.png" alt="Controle">
+
+                        <div>
+                          <h2>Controle de Carga</h2>
+                          <p class="meio">
+                            Monitoramento direto do peso utilizado e do tempo de
+                            descanso exato entre as séries.
+                          </p>
+                        </div>
+
+                      </div>
+
+                      <div class="conteudo">
+
+                        <img src="img/modal/Icon_fire.png" alt="Motivação">
+
+                        <div>
+                          <h2>Motivação Constante</h2>
+                          <p class="meio">
+                            Apoio psicológico e incentivo verbal durante o esforço
+                            máximo no exercício.
+                          </p>
+                        </div>
+
+                      </div>
+
+                      <div class="conteudo">
+
+                        <img src="img/modal/rep.png" alt="Reavaliação">
+
+                        <div>
+                          <h2>Reavaliação Periódica</h2>
+                          <p class="meio">
+                            Testes regulares para medir a evolução e redefinir novas
+                            metas ou trocas de treino.
+                          </p>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                    <!-- RODAPÉ -->
+                    <div class="botao">
+
+                      <a href="#contato">
+
+                        <button commandFor="modal-presencial" command="close" class="comecar-agora">
+                          COMEÇAR AGORA →
+                        </button>
+
+                      </a>
+
+                      <p class="rodape">
+                        VAGAS LIMITADAS. CONSULTE DISPONIBILIDADE.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </dialog>
+
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-image online">
+              <h3>Consultoria online</h3>
+            </div>
+            <div class="service-body">
+              <p>Treino e dieta personalizados direto no seu celular. Planejamento estratégico onde você estiver.</p>
+              <button commandFor="modal-online" command="show-modal" class="saiba-mais" type="button">Saiba
+                mais</button>
+
+              
+              <dialog id="modal-online" class="modal" role="dialog" aria-modal="true">
+
+                <div class="modal-container">
+
+                  <button commandFor="modal-online" command="close" class="close-modal" aria-label="Fechar modal">
+                    ✕
+                  </button>
+
+                  <!-- IMAGEM -->
+                  <div class="img-online"></div>
+
+                  <!-- CONTEÚDO -->
+                  <div class="modal-content">
+
+                    <!-- TOPO -->
+                    <div class="superior">
+
+                      <h1>
+                        CONSULTORIA <br>
+                        ONLINE
+                      </h1>
+
+                      <span></span>
+
+                      <p class="superior">
+                        Treine com a metodologia de elite, de qualquer lugar do mundo. Acompanhamento digital completo
+                      para resultados reais.
+                      </p>
+
+                    </div>
+
+                    <!-- BENEFÍCIOS -->
+                    <div class="meio">
+
+                      <div class="conteudo">
+
+                        <img src="img/modal/online/video.png" alt="Avaliação Física">
+
+                        <div>
+                          <h2>Avaliação dos movimentos</h2>
+                          <p class="meio">
+                            Envie vídeos da sua execução e receba correções técnicas detalhadas para máxima segurança.
+                          </p>
+                        </div>
+
+                      </div>
+
+                      <div class="conteudo">
+
+                        <img src="img/modal/online/plan.png" alt="Prescrição">
+
+                        <div>
+                          <h2>Planejamento do treino</h2>
+                          <p class="meio">
+                            Treinos 100% individualizados montados de acordo com seu objetivo e equipamentos disponíveis.
+                          </p>
+                        </div>
+
+                      </div>
+
+                      <div class="conteudo">
+
+                        <img src="img/modal/online/evolucao.png" alt="Correção">
+
+                        <div>
+                          <h2>Controle de Progressões</h2>
+                          <p class="meio">
+                            Monitoramento constante da sua carga e intensidade para garantir evolução contínua.
+                          </p>
+                        </div>
+
+                      </div>
+
+                      <div class="conteudo">
+
+                        <img src="img/modal/online/play.png" alt="Controle">
+
+                        <div>
+                          <h2>Vídeos demonstrativos</h2>
+                          <p class="meio">
+                            Acesso a uma biblioteca exclusiva de exercícios com explicações técnicas de cada movimento.
+                          </p>
+                        </div>
+
+                      </div>
+
+                      <div class="conteudo">
+
+                        <img src="img/modal/online/chat.png" alt="Motivação">
+
+                        <div>
+                          <h2>Contato sempre que precisar</h2>
+                          <p class="meio">
+                            Suporte direto via WhatsApp para tirar dúvidas sobre treino, dieta e rotina.
+                          </p>
+                        </div>
+
+                      </div>
+
+                      <div class="conteudo">
+
+                        <img src="img/modal/online/cam.png" alt="Reavaliação">
+
+                        <div>
+                          <h2>Avaliação física através de fotos</h2>
+                          <p class="meio">
+                            Acompanhamento estético mensal através de registros fotográficos para validar o progresso.
+                          </p>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                    <!-- RODAPÉ -->
+                    <div class="botao">
+
+                      <a href="#contato">
+
+                        <button commandFor="modal-online" command="close" class="comecar-agora">
+                          COMEÇAR AGORA →
+                        </button>
+
+                      </a>
+
+                      <p class="rodape">
+                        VAGAS LIMITADAS. CONSULTE DISPONIBILIDADE.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Etapas do método de trabalho. -->
+    <section class="method" id="metodologia">
+      <div class="container">
+        <h2 class="section-title line-title">Metodologia de alta performance</h2>
+        <div class="steps-grid">
+          <article class="step"><span class="number">01</span>
+            <p class="eyebrow simple">Análise</p>
+            <h3>Avaliação inicial</h3>
+            <p>Análise corporal completa, histórico e mapeamento de objetivos estruturais.</p>
+          </article>
+          <article class="step"><span class="number">02</span>
+            <p class="eyebrow simple">Estratégia</p>
+            <h3>Planejamento</h3>
+            <p>Desenho tático do macrociclo de treinamento e manipulação dietética.</p>
+          </article>
+          <article class="step"><span class="number">03</span>
+            <p class="eyebrow simple">Execução</p>
+            <h3>Periodização</h3>
+            <p>Controle de volume, intensidade e densidade para hipertrofia máxima.</p>
+          </article>
+          <article class="step"><span class="number">04</span>
+            <p class="eyebrow simple">Evolução</p>
+            <h3>Ajustes mensais</h3>
+            <p>Refinamento contínuo baseado na resposta metabólica e progresso visual.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Declaração de posicionamento da marca. -->
+    <section class="philosophy" id="filosofia">
+      <div class="texture" aria-hidden="true"></div>
+      <div class="container philosophy-content">
+        <span class="material-symbols-outlined icon">fitness_center</span>
+        <h2 class="section-title center">Minha filosofia</h2>
+        <blockquote>“O sucesso não é um destino, é um hábito. A disciplina brutal e o foco inabalável são as únicas
+          ferramentas que separam o ordinário do extraordinário no fisiculturismo e na vida.”</blockquote>
+        <p class="author">— Erick Rodrigues</p>
+      </div>
+    </section>
+
+    <!-- Depoimentos. -->
+    <section class="testimonials" id="feedback">
+      <div class="container">
+        <h2 class="section-title center">Resultados <em>reais</em></h2>
+        <div class="testimonial-grid">
+          <article class="testimonial">
+            <div class="person"><span class="material-symbols-outlined">person</span>
+              <div>
+                <h3>Carlos S.</h3>
+                <p>Atleta amador</p>
+              </div>
+            </div>
+            <p>“A precisão da dieta e o ajuste fino nos treinos mudaram meu físico em 12 semanas. Consultoria de outro
+              nível.”</p>
+          </article>
+          <article class="testimonial">
+            <div class="person"><span class="material-symbols-outlined">person</span>
+              <div>
+                <h3>Mariana T.</h3>
+                <p>Estilo de vida</p>
+              </div>
+            </div>
+            <p>“Sempre tive dificuldade em ganhar massa magra. Com a metodologia do Erick, os resultados foram
+              consistentes e duradouros.”</p>
+          </article>
+          <article class="testimonial">
+            <div class="person"><span class="material-symbols-outlined">person</span>
+              <div>
+                <h3>Rafael L.</h3>
+                <p>Emagrecimento</p>
+              </div>
+            </div>
+            <p>“Disciplina virou rotina. Perdi 15kg mantendo a massa muscular. O acompanhamento presencial faz toda a
+              diferença.”</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Área de conversão e formulário. -->
+    <section class="contact striped-side" id="contato">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <h2 class="section-title">Vamos alcançar<br><em>seu objetivo</em></h2>
+          <p class="lead">Entre em contato para agendar uma avaliação ou iniciar sua consultoria online. Vagas limitadas
+            para acompanhamento premium.</p>
+          <div class="contact-actions">
+            <div class="social-links"><a href="#" aria-label="WhatsApp"><span
+                  class="material-symbols-outlined">chat</span>WhatsApp</a><a href="#" aria-label="Instagram"><span
+                  class="material-symbols-outlined">photo_camera</span>Instagram</a></div><a class="hire-button"
+              href="#formulario">Contratar consultoria</a>
+          </div>
+        </div>
+        <div class="form-card" id="formulario">
+          <form id="contact-form">
+            <label>Nome completo<input name="nome" placeholder="Seu nome" required></label>
+            <label>Email<input name="email" type="email" placeholder="seu@email.com" required></label>
+            <label>Objetivo / mensagem<textarea name="mensagem" rows="4"
+                placeholder="Conte um pouco sobre seu objetivo..." required></textarea></label>
+            <button class="button button-outline" type="submit">Enviar mensagem</button>
+            <p class="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé com os mesmos atalhos da navegação. -->
+  <footer class="site-footer">
+    <div class="container footer-content"><a class="brand footer-brand" href="#home"><img src="img/LOGO.png"
+          alt="Erick Rodrigues"></a>
+      <div class="footer-links"><a href="#home">Home</a><a href="#servicos">Serviços</a><a
+          href="#metodologia">Metodologia</a><a href="#filosofia">Filosofia</a><a href="#feedback">Feedback</a><a
+          href="#contato">Contato</a></div>
+      <p>Desenvolvido por DRK</p>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

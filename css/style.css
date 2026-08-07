@@ -1,0 +1,1318 @@
+:root {
+   --black: #0a0a0a;
+   --surface: #1e1e1e;
+   --border: #2a2a2a;
+   --red: #ff0000;
+   --red-dark: #8b0000;
+   --coral: #ff5540;
+   --text: #fff;
+   --muted: #ebbbb4;
+   --max: 1200px;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+   scroll-padding-top: 86px;
+}
+
+body {
+   margin: 0;
+   background: var(--black);
+   color: var(--text);
+   font-family: "Hanken Grotesk", sans-serif;
+   font-size: 16px;
+   line-height: 1.5;
+}
+
+a {
+   color: inherit;
+   text-decoration: none;
+}
+
+button,
+input,
+textarea {
+   font: inherit;
+}
+
+button {
+   cursor: pointer;
+}
+
+.container {
+   width: min(calc(100% - 40px), var(--max));
+   margin: auto;
+}
+
+.site-header {
+   position: sticky;
+   top: 0;
+   z-index: 20;
+   border-bottom: 1px solid #603E39;
+
+}
+
+.navigation {
+   min-height: 86px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 24px;
+   background: #fff;
+
+
+
+}
+
+.brand img {
+   display: block;
+   height: 80px;
+   width: auto;
+   object-fit: contain;
+   margin-left: 24px;
+}
+
+.nav-content,
+.nav-links {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 24px;
+}
+
+.nav-content {
+   flex: 1;
+   margin: auto;
+}
+
+
+.nav-content a {
+   font-family: "Bebas Neue", sans-serif;
+   font-size: 20px;
+   letter-spacing: .07em;
+   text-transform: uppercase;
+   transition: .25s ease;
+}
+
+.nav-content a {
+   color: #1b0907;
+}
+
+.nav-content a:hover,
+.nav-content a.active {
+   color: var(--red);
+   transform: scale(1.05);
+}
+
+.nav-content a.active {
+   border-bottom: 2px solid var(--red);
+}
+
+.button {
+   font-family: "Bebas Neue", sans-serif;
+   font-size: 20px;
+   letter-spacing: .07em;
+   text-transform: uppercase;
+   display: inline-block;
+   border: 0;
+   padding: 3px 26px;
+   text-align: center;
+   margin-right: 24px;
+}
+
+.button-primary {
+   color: #fff;
+   background: linear-gradient(135deg, var(--red), var(--red-dark));
+
+}
+
+.button-primary:hover {
+   background: var(--red);
+   box-shadow: inset 0 1px rgba(255, 255, 255, .2);
+}
+
+.menu-toggle {
+   display: none;
+
+   width: 44px;
+   height: 44px;
+
+   padding: 8px;
+
+   border: none;
+   background: transparent;
+
+   cursor: pointer;
+
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   gap: 5px;
+
+   z-index: 1001;
+}
+
+.menu-toggle span {
+   display: block;
+
+   width: 25px;
+   height: 2px;
+
+   background: #111;
+
+   transition:
+      transform .3s ease,
+      opacity .3s ease;
+}
+
+.hero {
+   position: relative;
+   min-height: 91vh;
+   display: flex;
+   align-items: center;
+   overflow: hidden;
+   border-bottom: 1px solid #603e39;
+}
+
+.hero-background {
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(90deg, #210e0b 0%, rgba(33, 14, 11, .8) 45%, transparent 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBm_ibkVilkPPyaQ9qRm_5ew6PHf1z3QIES0KL-qcoSq-dpCgivuaTTKGAdZjcjuuA1ExCBgHkfqnGr0Q_sx7_iu-ENPrQzn00kvYHDdM9wAq9kwJ5Qh_Sg_LojRd3b4gQj1Qxle8ySLzCSM5qpYlE-g3Ocw8zvpTP-3InmpgIMOUZji0Gk1yhlHr3Wp3h9zNPNazIygUY7m5d5IT6oHXWcLnoHf0TD9F8UoeA-yizjHjqBKd5g0BgC") center top/cover;
+   opacity: .75;
+}
+
+.hero-content {
+   position: relative;
+}
+
+.hero-copy {
+   max-width: 570px;
+   padding: 96px 0;
+}
+
+.eyebrow,
+.author {
+   margin: 0;
+   color: var(--coral);
+   font: 700 12px/16px "JetBrains Mono", monospace;
+   letter-spacing: .1em;
+   text-transform: uppercase;
+}
+
+.button-hero {
+   font-family: "Bebas Neue", sans-serif;
+   font-size: 20px;
+   letter-spacing: .07em;
+   text-transform: uppercase;
+   display: inline-block;
+   border: 0;
+   padding: 8px 36px;
+   text-align: center;
+   margin-right: 24px;
+   color: #fff;
+   background: linear-gradient(135deg, var(--red), var(--red-dark));
+
+}
+
+.button-hero:hover {
+   background: var(--red);
+   box-shadow: inset 0 1px rgba(255, 255, 255, .2);
+}
+
+.eyebrow span {
+   display: inline-block;
+   width: 32px;
+   height: 4px;
+   margin-right: 8px;
+   vertical-align: middle;
+   background: var(--coral);
+}
+
+.hero h1,
+.section-title {
+   margin: 16px 0 20px;
+   font: italic 400 clamp(48px, 7vw, 80px)/.98 "Bebas Neue", sans-serif;
+   letter-spacing: .02em;
+   text-transform: uppercase;
+}
+
+.hero h1 em,
+.section-title em {
+   color: var(--coral);
+   font-style: inherit;
+}
+
+.lead {
+   max-width: 550px;
+   margin: 0 0 24px;
+   color: var(--muted);
+   font-size: 18px;
+   line-height: 1.55;
+}
+
+section {
+   padding: 96px 0;
+}
+
+.striped-section,
+.striped-side {
+   background-color: #1b0907;
+   background-image: repeating-linear-gradient(45deg, transparent 0 10px, rgba(255, 0, 0, .05) 10px 20px);
+}
+
+.section-title {
+   font-size: 48px;
+}
+
+.section-title.center {
+   text-align: center;
+   margin-bottom: 48px;
+}
+
+.line-title {
+   padding-left: 16px;
+   border-left: 4px solid var(--coral);
+}
+
+.service-grid,
+.steps-grid,
+.testimonial-grid {
+   display: grid;
+   gap: 24px;
+}
+
+.service-grid {
+   grid-template-columns: repeat(2, 1fr);
+}
+
+.service-card,
+.step,
+.testimonial,
+.form-card {
+   border: 1px solid var(--border);
+   background: var(--surface);
+}
+
+.service-card,
+.form-card {
+   border-top: 4px solid var(--red);
+   border-bottom: 1px solid var(--red);
+   border-left: 1px solid var(--red);
+   border-right: 1px solid var(--red);
+
+}
+
+.service-image {
+   position: relative;
+   height: 256px;
+   display: flex;
+   align-items: end;
+   padding: 24px;
+   overflow: hidden;
+   background-position: center;
+   background-size: cover;
+   isolation: isolate;
+   filter: grayscale(1);
+   transition: filter .5s;
+}
+
+.service-image:hover {
+   filter: grayscale(0);
+}
+
+.service-image::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   z-index: -1;
+   background: linear-gradient(transparent, rgba(33, 14, 11, .9));
+}
+
+.service-image.presencial {
+   background-image: url(../img/presencial.jpg)
+}
+
+.service-image.online {
+   background-image: url(../img/online.jpg)
+}
+
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+   border: none;
+   padding: 0;
+   background: transparent;
+}
+
+.modal::backdrop {
+   background: rgba(0, 0, 0, .75);
+   backdrop-filter: blur(6px);
+}
+
+.modal-container {
+   position: relative;
+
+   width: min(1200px, 95vw);
+   height: 90vh;
+
+   display: flex;
+
+   background: #fff;
+
+   overflow: hidden;
+}
+
+
+/* =========================
+   IMAGEM
+========================= */
+
+.img-presencial {
+
+   width: 42%;
+   height: 100%;
+
+   background-image: url("../img/presencial.jpg");
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+
+   display: flex;
+   align-items: flex-end;
+
+   padding: 25px;
+}
+
+.img-online {
+
+   width: 42%;
+   height: 100%;
+
+   background-image: url(../img/online.jpg);
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+
+   display: flex;
+   align-items: flex-end;
+
+   padding: 25px;
+}
+
+.img-presencial::after {
+
+   content: "PRESENCIAL";
+
+   background: #C40000;
+   color: white;
+
+   font-size: .75rem;
+   letter-spacing: 2px;
+
+   padding: 8px 18px;
+}
+
+.img-online::after {
+   content: "ONLINE";
+
+   background: #C40000;
+   color: white;
+
+   font-size: .75rem;
+   letter-spacing: 2px;
+
+   padding: 8px 18px;
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.modal-content {
+
+   width: 58%;
+   padding: 50px;
+   box-sizing: border-box;
+
+   display: flex;
+   flex-direction: column;
+
+
+
+   overflow-y: auto;
+}
+
+
+/* =========================
+   TOPO
+========================= */
+
+.superior h1 {
+
+   font-size: 3rem;
+   font-weight: 800;
+
+   line-height: 1.1;
+
+   color: #1b1b1b;
+}
+
+.superior span {
+
+   display: block;
+
+   width: 60px;
+   height: 4px;
+
+   background: #C40000;
+
+   margin: 25px 0;
+}
+
+.superior p.superior {
+
+   color: #666;
+
+   line-height: 1.7;
+
+   max-width: 500px;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.meio {
+   margin-top: 50px;
+   display: grid;
+   grid-template-columns: repeat(2, minmax(240px, 1fr));
+   gap: 35px;
+   margin-bottom: 50px;
+}
+
+.conteudo {
+   display: flex;
+   grid-template-columns: 28px 1fr;
+   align-items: start;
+   gap: 15px;
+   margin-top: 0;
+}
+
+.conteudo img {
+   width: 22px;
+   flex-shrink: 0;
+   display: block;
+   margin-top: 0;
+}
+
+.conteudo div {
+   flex: 1;
+   min-width: 0;
+}
+
+.conteudo h2 {
+
+   font-size: 1.15rem;
+
+   color: #222;
+
+   margin: 0 0 8px 0;
+}
+
+.conteudo p.meio {
+
+   color: #6d6d6d;
+
+   margin: 0;
+
+   font-size: 1rem;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.botao {
+
+   margin-top: auto;
+
+   padding-top: 40px;
+
+   border-top: 1px solid #ddd;
+
+   display: flex;
+
+   align-items: center;
+
+   gap: 35px;
+}
+
+.comecar-agora {
+
+   width: 220px;
+   height: 65px;
+
+   border: none;
+
+   background: #C40000;
+
+   color: #fff;
+
+   font-weight: 700;
+
+   letter-spacing: 1px;
+
+   cursor: pointer;
+
+   transition: .3s;
+}
+
+.comecar-agora:hover {
+
+   background: #980000;
+}
+
+.botao p.rodape {
+
+   color: #666;
+
+   letter-spacing: 1px;
+
+   text-transform: uppercase;
+
+   font-size: .8rem;
+}
+
+
+/* =========================
+   FECHAR
+========================= */
+
+.close-modal {
+
+   position: absolute;
+
+   top: 15px;
+   right: 15px;
+
+   width: 42px;
+   height: 42px;
+
+   border: none;
+
+   background: #fff;
+
+   border: 1px solid #d5d5d5;
+
+   color: #444;
+
+   font-size: 18px;
+
+   cursor: pointer;
+
+   z-index: 10;
+
+   transition: .3s;
+}
+
+.close-modal:hover {
+
+   transform: rotate(180deg);
+
+   background: #C40000;
+
+   color: #fff;
+}
+
+
+.service-image h3,
+.step h3,
+.testimonial h3 {
+   margin: 0;
+   font: 400 32px/1 "Bebas Neue", sans-serif;
+   text-transform: uppercase;
+}
+
+.service-body {
+   display: flex;
+   flex: 1;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 24px;
+   padding: 24px;
+}
+
+.service-body p,
+.step>p,
+.testimonial>p {
+   margin: 0;
+   color: var(--muted);
+   font-size: 18px;
+}
+
+.saiba-mais {
+   color: #fff;
+   border: 2px solid var(--coral);
+   background: transparent;
+}
+
+.saiba-mais:hover {
+   background: var(--coral);
+}
+
+.method {
+   border-top: 1px solid #603e39;
+}
+
+.steps-grid {
+   grid-template-columns: repeat(4, 1fr);
+}
+
+.step {
+   position: relative;
+   min-height: 240px;
+   padding: 24px;
+   overflow: hidden;
+}
+
+.number {
+   position: absolute;
+   top: -7px;
+   right: 12px;
+   color: #fff;
+   opacity: .1;
+   font: 80px/1 "Bebas Neue", sans-serif;
+}
+
+.simple {
+   margin-bottom: 16px;
+}
+
+.step h3 {
+   margin: 0 0 8px;
+}
+
+.step>p:last-child {
+   padding-top: 8px;
+   border-top: 1px solid #603e39;
+   font-size: 16px;
+}
+
+.philosophy {
+   position: relative;
+   min-height: 60vh;
+   display: grid;
+   place-items: center;
+   overflow: hidden;
+}
+
+.texture {
+   position: absolute;
+   inset: 0;
+   opacity: .2;
+   background-color: #0a0a0a;
+   background-image: repeating-linear-gradient(45deg, #2a2a2a 0 2px, transparent 2px 10px);
+}
+
+.philosophy-content {
+   position: relative;
+   max-width: 800px;
+   text-align: center;
+}
+
+.icon {
+   color: var(--coral);
+   font-size: 72px;
+}
+
+.philosophy blockquote {
+   margin: 0 0 24px;
+   padding: 0 16px;
+   border-inline: 4px solid var(--coral);
+   color: var(--muted);
+   font-size: 18px;
+   font-style: italic;
+}
+
+.testimonials {
+   border-block: 1px solid #603e39;
+   background: #1b0907;
+}
+
+.testimonial-grid {
+   grid-template-columns: repeat(3, 1fr);
+}
+
+.testimonial {
+   padding: 24px;
+   border-top: 2px solid var(--coral);
+}
+
+.person {
+   display: flex;
+   align-items: center;
+   gap: 16px;
+   margin-bottom: 16px;
+}
+
+.person>span {
+   display: grid;
+   width: 48px;
+   height: 48px;
+   place-items: center;
+   border-radius: 50%;
+   color: var(--coral);
+   background: var(--border);
+}
+
+.person p {
+   margin: 0;
+   color: var(--muted);
+   font: 700 12px "JetBrains Mono", monospace;
+   text-transform: uppercase;
+}
+
+.contact {
+   overflow: hidden;
+}
+
+.contact-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 48px;
+   align-items: start;
+}
+
+.contact-copy .section-title {
+   margin-top: 0;
+}
+
+.contact-actions {
+   display: flex;
+   gap: 16px;
+   margin-top: 24px;
+}
+
+.social-links {
+   display: grid;
+   flex: 1;
+   gap: 16px;
+}
+
+.social-links a {
+   display: flex;
+   align-items: center;
+   gap: 16px;
+   padding: 16px;
+   border: 1px solid var(--border);
+   background: var(--surface);
+   font: 20px "Bebas Neue", sans-serif;
+   letter-spacing: .07em;
+   text-transform: uppercase;
+}
+
+.social-links a:hover {
+   border-color: var(--coral);
+}
+
+.social-links span {
+   color: var(--coral);
+}
+
+.hire-button {
+   display: grid;
+   width: 300px;
+   min-height: 490px;
+   place-items: center;
+   padding: 24px;
+   color: #fff;
+   border: 4px solid rgba(255, 255, 255, .2);
+   background: linear-gradient(135deg, var(--red), var(--red-dark));
+   box-shadow: 0 0 30px rgba(255, 0, 0, .3);
+   font: 32px/1 "Bebas Neue", sans-serif;
+   letter-spacing: .07em;
+   text-align: center;
+   text-transform: uppercase;
+   transform: skewX(-3deg);
+}
+
+.form-card {
+   padding: 48px;
+}
+
+form {
+   display: grid;
+   gap: 16px;
+}
+
+label {
+   display: grid;
+   gap: 4px;
+   color: var(--muted);
+   font: 700 12px "JetBrains Mono", monospace;
+   letter-spacing: .1em;
+   text-transform: uppercase;
+}
+
+input,
+textarea {
+   width: 100%;
+   padding: 8px 16px;
+   resize: vertical;
+   color: #fff;
+   border: 1px solid var(--border);
+   outline: 0;
+   background: var(--surface);
+   font: 16px "Hanken Grotesk", sans-serif;
+   letter-spacing: normal;
+   text-transform: none;
+}
+
+input:focus,
+textarea:focus {
+   border-color: var(--coral);
+}
+
+.form-status {
+   min-height: 24px;
+   margin: 0;
+   color: var(--coral);
+   font-size: 14px;
+}
+
+.site-footer {
+   border-top: 1px solid #603e39;
+   background: #1b0907;
+}
+
+.footer-content {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 24px;
+   padding-block: 48px;
+}
+
+.footer-brand img {
+   height: 40px;
+   filter: grayscale(1);
+   opacity: .5;
+}
+
+.footer-brand:hover img {
+   filter: none;
+   opacity: 1;
+}
+
+.footer-links {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 16px;
+}
+
+.footer-links a,
+.footer-content>p {
+   margin: 0;
+   color: var(--muted);
+   font: 700 12px "JetBrains Mono", monospace;
+   letter-spacing: .1em;
+   text-transform: uppercase;
+}
+
+.footer-links a:hover {
+   color: #fff;
+   text-decoration: underline;
+   text-decoration-color: var(--coral);
+   text-underline-offset: 4px;
+}
+
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 800px) {
+
+   /* -------------------------
+       NAVEGAÇÃO
+    ------------------------- */
+
+   @media (max-width: 800px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navigation {
+        position: relative;
+    }
+
+    .nav-content {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        display: none;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        padding: 25px 20px;
+
+        background: #fff;
+
+        box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+
+        z-index: 1000;
+    }
+
+    .nav-content.open {
+        display: flex;
+    }
+
+    .nav-content a {
+        width: 100%;
+
+        padding: 12px 0;
+    }
+}
+
+   /* -------------------------
+       SERVIÇOS
+    ------------------------- */
+
+   .service-grid {
+      grid-template-columns: 1fr;
+   }
+
+
+   /* -------------------------
+       METODOLOGIA
+    ------------------------- */
+
+   .steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+
+   /* -------------------------
+       DEPOIMENTOS
+    ------------------------- */
+
+   .testimonial-grid {
+      grid-template-columns: 1fr;
+   }
+
+
+   /* -------------------------
+       CONTATO
+    ------------------------- */
+
+   .contact-grid {
+      grid-template-columns: 1fr;
+   }
+
+
+   /* ========================================================
+       MODAL
+    ======================================================== */
+
+   .modal-container {
+      width: 92vw;
+      height: 90vh;
+
+      display: flex;
+      flex-direction: column;
+
+      overflow-y: auto;
+   }
+
+
+   .img-presencial,
+   .img-online {
+      width: 100%;
+      height: 260px;
+      min-height: 260px;
+
+      flex-shrink: 0;
+
+      background-position: center;
+      background-size: cover;
+   }
+
+
+   .modal-content {
+      width: 100%;
+      padding: 35px 30px;
+   }
+
+
+   .superior h1 {
+      font-size: 2.5rem;
+      line-height: 1;
+   }
+
+
+   .meio {
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 30px 25px;
+   }
+
+
+   .conteudo {
+      align-items: start;
+   }
+
+
+   .conteudo img {
+      width: 20px;
+   }
+
+
+   .botao {
+      gap: 20px;
+   }
+}
+
+
+
+/* ============================================================
+   CELULAR
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+   /* -------------------------
+       NAVEGAÇÃO
+    ------------------------- */
+
+   .navigation {
+      padding-left: 20px;
+      padding-right: 20px;
+   }
+
+
+   .nav-content {
+      padding: 20px;
+   }
+
+
+   /* -------------------------
+       HERO
+    ------------------------- */
+
+   .hero h1 {
+      font-size: clamp(3rem, 14vw, 4.5rem);
+   }
+
+
+   /* -------------------------
+       SEÇÕES
+    ------------------------- */
+
+   section {
+      padding-top: 60px;
+      padding-bottom: 60px;
+   }
+
+
+   .section-title {
+      font-size: clamp(2.2rem, 10vw, 3rem);
+   }
+
+
+   /* -------------------------
+       METODOLOGIA
+    ------------------------- */
+
+   .steps-grid {
+      grid-template-columns: 1fr;
+   }
+
+
+   /* ========================================================
+       MODAL
+    ======================================================== */
+
+   .modal-container {
+      width: 94vw;
+
+      height: 92vh;
+      max-height: 92vh;
+   }
+
+
+   /* IMAGEM */
+
+   .img-presencial,
+   .img-online {
+      height: 210px;
+      min-height: 210px;
+   }
+
+
+   /* CONTEÚDO */
+
+   .modal-content {
+      padding: 30px 22px 25px;
+   }
+
+
+   /* TÍTULO */
+
+   .superior h1 {
+      font-size: 2.2rem;
+      line-height: 1.05;
+   }
+
+
+   /* BENEFÍCIOS */
+
+   .meio {
+      grid-template-columns: 1fr;
+
+      gap: 25px;
+
+      margin-top: 30px;
+      margin-bottom: 30px;
+   }
+
+
+   .conteudo {
+      grid-template-columns: 25px 1fr;
+
+      gap: 12px;
+
+      align-items: start;
+   }
+
+
+   .conteudo img {
+      width: 20px;
+      height: auto;
+   }
+
+
+   .conteudo h2 {
+      font-size: 1rem;
+      line-height: 1.2;
+   }
+
+
+   /* RODAPÉ DO MODAL */
+
+   .botao {
+      flex-direction: column;
+
+      align-items: stretch;
+
+      gap: 15px;
+
+      padding-top: 25px;
+   }
+
+
+   .comecar-agora {
+      width: 100%;
+      height: 58px;
+   }
+
+
+   .botao p {
+      text-align: center;
+   }
+
+
+   /* BOTÃO FECHAR */
+
+   .close-modal {
+      top: 10px;
+      right: 10px;
+
+      width: 36px;
+      height: 36px;
+
+      z-index: 20;
+   }
+
+
+   /* -------------------------
+       CONTATO
+    ------------------------- */
+
+   .contact-actions {
+      flex-direction: column;
+   }
+
+
+   .hire-button {
+      width: 100%;
+   }
+}
+
+
+
+/* ============================================================
+   CELULAR PEQUENO
+   ============================================================ */
+
+@media (max-width: 400px) {
+
+   .modal-container {
+      width: 96vw;
+      height: 94vh;
+   }
+
+
+   .img-presencial,
+   .img-online {
+      height: 180px;
+      min-height: 180px;
+   }
+
+
+   .modal-content {
+      padding: 25px 18px 20px;
+   }
+
+
+   .superior h1 {
+      font-size: 1.85rem;
+   }
+
+
+   .meio {
+      gap: 22px;
+   }
+
+
+   .conteudo h2 {
+      font-size: .95rem;
+   }
+
+
+   .comecar-agora {
+      height: 54px;
+   }
+}
