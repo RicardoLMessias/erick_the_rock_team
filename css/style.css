@@ -307,25 +307,39 @@ section {
 
 }
 
-.service-image {
+.service-image1 {
    position: relative;
    height: 256px;
    display: flex;
    align-items: end;
    padding: 24px;
    overflow: hidden;
-   background-position: center;
+   background-position: center 20%;
    background-size: cover;
    isolation: isolate;
    filter: grayscale(1);
    transition: filter .5s;
 }
 
-.service-image:hover {
+.service-image2 {
+   position: relative;
+   height: 256px;
+   display: flex;
+   align-items: end;
+   padding: 24px;
+   overflow: hidden;
+   background-position: center 40%;
+   background-size: cover;
+   isolation: isolate;
+   filter: grayscale(1);
+   transition: filter .5s;
+}
+
+.service-image1:hover {
    filter: grayscale(0);
 }
 
-.service-image::before {
+.service-image1::before {
    content: "";
    position: absolute;
    inset: 0;
@@ -333,11 +347,24 @@ section {
    background: linear-gradient(transparent, rgba(33, 14, 11, .9));
 }
 
-.service-image.presencial {
+.service-image2:hover {
+   filter: grayscale(0);
+}
+
+.service-image2::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   z-index: -1;
+   background: linear-gradient(transparent, rgba(33, 14, 11, .9));
+}
+
+.service-image1.presencial {
+
    background-image: url(../img/presencial.jpg)
 }
 
-.service-image.online {
+.service-image2.online {
    background-image: url(../img/online.jpg)
 }
 
@@ -636,7 +663,8 @@ section {
 }
 
 
-.service-image h3,
+.service-image1 h3,
+.service-image2 h3,
 .step h3,
 .testimonial h3 {
    margin: 0;
@@ -654,7 +682,6 @@ section {
 }
 
 .service-body p,
-.step>p,
 .testimonial>p {
    margin: 0;
    color: var(--muted);
@@ -681,14 +708,25 @@ section {
 
 .step {
    position: relative;
-   min-height: 240px;
+   min-height: 203px;
    padding: 24px;
    overflow: hidden;
 }
 
+
+
+.eyebrow.simple {
+   font-size: 15px;
+   color: var(--coral)
+}
+
+.step p {
+   color: var(--muted);
+}
+
 .number {
    position: absolute;
-   top: -7px;
+   top: 15px;
    right: 12px;
    color: #fff;
    opacity: .1;
@@ -699,14 +737,17 @@ section {
    margin-bottom: 16px;
 }
 
+
+
 .step h3 {
-   margin: 0 0 8px;
+   font-size: 19px;
 }
 
 .step>p:last-child {
-   padding-top: 8px;
+   padding-top: 18px;
    border-top: 1px solid #603e39;
    font-size: 16px;
+
 }
 
 .philosophy {
@@ -757,6 +798,9 @@ section {
 .testimonial {
    padding: 24px;
    border-top: 2px solid var(--coral);
+   border-bottom: 1px solid var(--coral);
+   border-left: 1px solid var(--coral);
+   border-right: 1px solid var(--coral);
 }
 
 .person {
@@ -771,7 +815,6 @@ section {
    width: 48px;
    height: 48px;
    place-items: center;
-   border-radius: 50%;
    color: var(--coral);
    background: var(--border);
 }
@@ -794,6 +837,11 @@ section {
    align-items: start;
 }
 
+.lado-esquerdo {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
 .contact-copy .section-title {
    margin-top: 0;
 }
@@ -804,13 +852,13 @@ section {
    margin-top: 24px;
 }
 
-.social-links {
+.botoes {
    display: grid;
    flex: 1;
    gap: 16px;
 }
 
-.social-links a {
+.botoes a {
    display: flex;
    align-items: center;
    gap: 16px;
@@ -822,16 +870,16 @@ section {
    text-transform: uppercase;
 }
 
-.social-links a:hover {
+.botoes a:hover {
    border-color: var(--coral);
 }
 
-.social-links span {
+.botoes span {
    color: var(--coral);
 }
 
-.hire-button {
-   display: grid;
+
+.botoes a.consultoria {
    width: 300px;
    min-height: 490px;
    place-items: center;
@@ -844,8 +892,8 @@ section {
    letter-spacing: .07em;
    text-align: center;
    text-transform: uppercase;
-   transform: skewX(-3deg);
 }
+
 
 .form-card {
    padding: 48px;
@@ -893,7 +941,7 @@ textarea:focus {
 
 .site-footer {
    border-top: 1px solid #603e39;
-   background: #1b0907;
+   background: #131313;
 }
 
 .footer-content {
@@ -938,98 +986,216 @@ textarea:focus {
    text-underline-offset: 4px;
 }
 
+:root {
+   --primary: #ff5540;
+   --secondary: #9b0909;
+}
+
+.dev-link {
+   display: inline-block;
+   text-decoration: none;
+}
+
+.content-dev {
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   padding: 18px 30px;
+
+   border-radius: 12px;
+
+   overflow: hidden;
+
+   cursor: pointer;
+
+   will-change: transform;
+}
+
+.desenvolvido {
+   position: relative;
+   z-index: 2;
+   margin: 0;
+   color: var(--muted);
+   font: 700 12px "JetBrains Mono", monospace;
+   letter-spacing: .1em;
+   text-transform: uppercase;
+}
+
+.line {
+   position: absolute;
+   left: 0;
+
+   width: 100%;
+   height: 2px;
+
+   background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.top {
+   top: 0;
+   transform: scaleX(0);
+   transform-origin: left;
+}
+
+.bottom {
+   bottom: 0;
+   transform: scaleX(0);
+   transform-origin: right;
+}
+
+
 
 /* ============================================================
    RESPONSIVIDADE
-   ============================================================ */
+============================================================ */
 
 
 /* ============================================================
-   TABLET
-   ============================================================ */
+   TABLET / TELAS MÉDIAS
+============================================================ */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
-   /* -------------------------
-       NAVEGAÇÃO
-    ------------------------- */
+   /* =========================
+       HEADER
+    ========================= */
 
-   @media (max-width: 800px) {
+   .navigation {
+      min-height: 80px;
+      padding: 0 20px;
+      justify-content: space-between;
+   }
 
-    .menu-toggle {
-        display: flex;
-    }
+   .brand img {
+      height: 70px;
+      margin-left: 0;
+   }
 
-    .navigation {
-        position: relative;
-    }
+   .menu-toggle {
+      display: flex;
+   }
 
-    .nav-content {
-        position: absolute;
+   .nav-content {
+      position: absolute;
 
-        top: 100%;
-        left: 0;
-        right: 0;
+      top: 100%;
+      left: 0;
+      right: 0;
 
-        display: none;
+      display: none;
 
-        flex-direction: column;
+      flex-direction: column;
+      align-items: stretch;
 
-        width: 100%;
+      width: 100%;
 
-        padding: 25px 20px;
+      padding: 20px;
 
-        background: #fff;
+      background: #fff;
 
-        box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
 
-        z-index: 1000;
-    }
+      z-index: 1000;
+   }
 
-    .nav-content.open {
-        display: flex;
-    }
+   .nav-content.open {
+      display: flex;
+   }
 
-    .nav-content a {
-        width: 100%;
+   .nav-content a {
+      width: 100%;
+      padding: 10px 0;
+   }
 
-        padding: 12px 0;
-    }
-}
+   .nav-cta {
+      display: none;
+   }
 
-   /* -------------------------
+
+   /* =========================
+       HERO
+    ========================= */
+
+   .hero {
+      min-height: 85vh;
+   }
+
+   .hero-copy {
+      max-width: 600px;
+      padding: 80px 0;
+   }
+
+
+   /* =========================
        SERVIÇOS
-    ------------------------- */
+    ========================= */
 
    .service-grid {
       grid-template-columns: 1fr;
    }
 
 
-   /* -------------------------
+   .service-image1,
+   .service-image2 {
+      height: 280px;
+   }
+
+
+   /* =========================
        METODOLOGIA
-    ------------------------- */
+    ========================= */
 
    .steps-grid {
       grid-template-columns: repeat(2, 1fr);
    }
 
 
-   /* -------------------------
+   /* =========================
        DEPOIMENTOS
-    ------------------------- */
+    ========================= */
 
    .testimonial-grid {
       grid-template-columns: 1fr;
    }
 
 
-   /* -------------------------
+   /* =========================
        CONTATO
-    ------------------------- */
+    ========================= */
 
    .contact-grid {
       grid-template-columns: 1fr;
+      gap: 40px;
+   }
+
+   .lado-esquerdo {
+      grid-template-columns: 1fr;
+   }
+
+   .botoes a.consultoria {
+      width: 100%;
+      min-height: 300px;
+   }
+
+
+   /* =========================
+       FORMULÁRIO
+    ========================= */
+
+   .form-card {
+      padding: 35px;
+   }
+
+
+   /* =========================
+       FOOTER
+    ========================= */
+
+   .footer-content {
+      flex-direction: column;
+      text-align: center;
    }
 
 
@@ -1055,33 +1221,28 @@ textarea:focus {
       min-height: 260px;
 
       flex-shrink: 0;
-
-      background-position: center;
-      background-size: cover;
    }
 
 
    .modal-content {
       width: 100%;
-      padding: 35px 30px;
+      padding: 35px;
    }
 
 
    .superior h1 {
       font-size: 2.5rem;
-      line-height: 1;
    }
 
 
    .meio {
-      grid-template-columns: repeat(2, 1fr);
-
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 30px 25px;
    }
 
 
    .conteudo {
-      align-items: start;
+      min-width: 0;
    }
 
 
@@ -1099,55 +1260,188 @@ textarea:focus {
 
 /* ============================================================
    CELULAR
-   ============================================================ */
+============================================================ */
 
 @media (max-width: 600px) {
 
-   /* -------------------------
-       NAVEGAÇÃO
-    ------------------------- */
+   /* =========================
+       CONTAINER
+    ========================= */
 
-   .navigation {
-      padding-left: 20px;
-      padding-right: 20px;
+   .container {
+      width: min(calc(100% - 32px), var(--max));
    }
 
 
-   .nav-content {
+   /* =========================
+       HEADER
+    ========================= */
+
+   .navigation {
+      min-height: 76px;
+      padding: 0 16px;
+   }
+
+   .brand img {
+      height: 62px;
+   }
+
+
+   .menu-toggle {
+      width: 42px;
+      height: 42px;
+   }
+
+
+   /* =========================
+       HERO
+    ========================= */
+
+   .hero {
+      min-height: 80vh;
+   }
+
+   .hero-copy {
+      padding: 60px 0;
+   }
+
+   .hero h1 {
+      font-size: clamp(46px, 14vw, 68px);
+   }
+
+   .lead {
+      font-size: 16px;
+   }
+
+   .button-hero {
+      margin-right: 0;
+   }
+
+
+   /* =========================
+       SEÇÕES
+    ========================= */
+
+   section {
+      padding: 64px 0;
+   }
+
+   .section-title {
+      font-size: clamp(40px, 11vw, 52px);
+   }
+
+   .section-title.center {
+      margin-bottom: 35px;
+   }
+
+
+   /* =========================
+       SERVIÇOS
+    ========================= */
+
+   .service-grid {
+      grid-template-columns: 1fr;
+   }
+
+   .service-image1,
+   .service-image2 {
+      height: 230px;
+   }
+
+   .service-body {
+      padding: 20px;
+      gap: 20px;
+   }
+
+   .service-body p,
+   .testimonial>p {
+      font-size: 16px;
+   }
+
+
+   /* =========================
+       METODOLOGIA
+    ========================= */
+
+   .steps-grid {
+      grid-template-columns: 1fr;
+   }
+
+   .step {
+      min-height: auto;
+      padding: 22px;
+   }
+
+
+   /* =========================
+       FILOSOFIA
+    ========================= */
+
+   .philosophy {
+      min-height: 55vh;
+   }
+
+   .philosophy blockquote {
+      font-size: 16px;
+   }
+
+   .icon {
+      font-size: 56px;
+   }
+
+
+   /* =========================
+       DEPOIMENTOS
+    ========================= */
+
+   .testimonial-grid {
+      grid-template-columns: 1fr;
+   }
+
+   .testimonial {
       padding: 20px;
    }
 
 
-   /* -------------------------
-       HERO
-    ------------------------- */
+   /* =========================
+       CONTATO
+    ========================= */
 
-   .hero h1 {
-      font-size: clamp(3rem, 14vw, 4.5rem);
-   }
-
-
-   /* -------------------------
-       SEÇÕES
-    ------------------------- */
-
-   section {
-      padding-top: 60px;
-      padding-bottom: 60px;
-   }
-
-
-   .section-title {
-      font-size: clamp(2.2rem, 10vw, 3rem);
-   }
-
-
-   /* -------------------------
-       METODOLOGIA
-    ------------------------- */
-
-   .steps-grid {
+   .contact-grid {
       grid-template-columns: 1fr;
+      gap: 30px;
+   }
+
+   .lado-esquerdo {
+      grid-template-columns: 1fr;
+   }
+
+   .contact-actions {
+      flex-direction: column;
+   }
+
+   .botoes {
+      width: 100%;
+   }
+
+   .botoes a {
+      width: 100%;
+   }
+
+   .botoes a.consultoria {
+      width: 100%;
+      min-height: 220px;
+      padding: 20px;
+      font-size: 26px;
+   }
+
+
+   /* =========================
+       FORMULÁRIO
+    ========================= */
+
+   .form-card {
+      padding: 24px;
    }
 
 
@@ -1157,29 +1451,24 @@ textarea:focus {
 
    .modal-container {
       width: 94vw;
-
       height: 92vh;
       max-height: 92vh;
    }
 
 
-   /* IMAGEM */
-
    .img-presencial,
    .img-online {
+      width: 100%;
       height: 210px;
       min-height: 210px;
    }
 
 
-   /* CONTEÚDO */
-
    .modal-content {
+      width: 100%;
       padding: 30px 22px 25px;
    }
 
-
-   /* TÍTULO */
 
    .superior h1 {
       font-size: 2.2rem;
@@ -1187,30 +1476,37 @@ textarea:focus {
    }
 
 
-   /* BENEFÍCIOS */
+   .superior span {
+      width: 45px;
+      height: 4px;
+      margin: 20px 0;
+   }
+
+
+   /*
+       Aqui está uma mudança importante:
+       o seu .meio usa minmax(240px, 1fr).
+       Em celular isso pode causar overflow.
+
+       Por isso zeramos o mínimo.
+    */
 
    .meio {
       grid-template-columns: 1fr;
-
       gap: 25px;
 
-      margin-top: 30px;
-      margin-bottom: 30px;
+      margin-top: 35px;
+      margin-bottom: 35px;
    }
 
 
    .conteudo {
-      grid-template-columns: 25px 1fr;
-
       gap: 12px;
-
-      align-items: start;
    }
 
 
    .conteudo img {
       width: 20px;
-      height: auto;
    }
 
 
@@ -1220,11 +1516,18 @@ textarea:focus {
    }
 
 
-   /* RODAPÉ DO MODAL */
+   .conteudo p.meio {
+      font-size: .9rem;
+      line-height: 1.5;
+   }
+
+
+   /* =========================
+       BOTÃO DO MODAL
+    ========================= */
 
    .botao {
       flex-direction: column;
-
       align-items: stretch;
 
       gap: 15px;
@@ -1239,12 +1542,17 @@ textarea:focus {
    }
 
 
-   .botao p {
+   .botao p.rodape {
+      margin: 0;
       text-align: center;
+      font-size: .7rem;
+      line-height: 1.4;
    }
 
 
-   /* BOTÃO FECHAR */
+   /* =========================
+       FECHAR MODAL
+    ========================= */
 
    .close-modal {
       top: 10px;
@@ -1257,27 +1565,89 @@ textarea:focus {
    }
 
 
-   /* -------------------------
-       CONTATO
-    ------------------------- */
+   /* =========================
+       FOOTER
+    ========================= */
 
-   .contact-actions {
-      flex-direction: column;
-   }
-
-
-   .hire-button {
-      width: 100%;
+   .footer-content {
+      padding-block: 35px;
    }
 }
 
 
 
 /* ============================================================
-   CELULAR PEQUENO
-   ============================================================ */
+   CELULARES PEQUENOS
+============================================================ */
 
 @media (max-width: 400px) {
+
+   /* =========================
+       HEADER
+    ========================= */
+
+   .brand img {
+      height: 56px;
+   }
+
+
+   /* =========================
+       HERO
+    ========================= */
+
+   .hero h1 {
+      font-size: 46px;
+   }
+
+
+   .lead {
+      font-size: 15px;
+   }
+
+
+   /* =========================
+       SEÇÕES
+    ========================= */
+
+   section {
+      padding: 55px 0;
+   }
+
+
+   .section-title {
+      font-size: 38px;
+   }
+
+
+   /* =========================
+       SERVIÇOS
+    ========================= */
+
+   .service-image1,
+   .service-image2 {
+      height: 200px;
+   }
+
+
+   .service-image1 h3,
+   .service-image2 h3 {
+      font-size: 27px;
+   }
+
+
+   /* =========================
+       CONTATO
+    ========================= */
+
+   .botoes a.consultoria {
+      min-height: 190px;
+      font-size: 24px;
+   }
+
+
+   /* =========================
+       MODAL
+    ========================= */
 
    .modal-container {
       width: 96vw;
@@ -1309,6 +1679,11 @@ textarea:focus {
 
    .conteudo h2 {
       font-size: .95rem;
+   }
+
+
+   .conteudo p.meio {
+      font-size: .82rem;
    }
 
 
