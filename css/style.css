@@ -180,9 +180,10 @@ button {
 }
 
 .hero-background {
-   position: absolute;
+   position:absolute;
    inset: 0;
-   background: linear-gradient(90deg, #210e0b 0%, rgba(33, 14, 11, .8) 45%, transparent 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBm_ibkVilkPPyaQ9qRm_5ew6PHf1z3QIES0KL-qcoSq-dpCgivuaTTKGAdZjcjuuA1ExCBgHkfqnGr0Q_sx7_iu-ENPrQzn00kvYHDdM9wAq9kwJ5Qh_Sg_LojRd3b4gQj1Qxle8ySLzCSM5qpYlE-g3Ocw8zvpTP-3InmpgIMOUZji0Gk1yhlHr3Wp3h9zNPNazIygUY7m5d5IT6oHXWcLnoHf0TD9F8UoeA-yizjHjqBKd5g0BgC") center top/cover;
+   background: linear-gradient(90deg, #210e0b 0%, rgba(33, 14, 11, .8) 45%, transparent 100%), url(../img/hero.png);
+   background-position: 100% 50%;
    opacity: .75;
 }
 
@@ -1045,8 +1046,6 @@ textarea:focus {
    transform-origin: right;
 }
 
-
-
 /* ============================================================
    RESPONSIVIDADE
 ============================================================ */
@@ -1058,202 +1057,222 @@ textarea:focus {
 
 @media (max-width: 900px) {
 
-   /* =========================
-       HEADER
-    ========================= */
+    /* =========================
+   HEADER
+========================= */
 
-   .navigation {
-      min-height: 80px;
-      padding: 0 20px;
-      justify-content: space-between;
-   }
+.navigation {
+    min-height: 76px;
+    padding: 0 16px;
 
-   .brand img {
-      height: 70px;
-      margin-left: 0;
-   }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-   .menu-toggle {
-      display: flex;
-   }
+.brand img {
+    height: 62px;
+}
 
-   .nav-content {
-      position: absolute;
+.menu-toggle {
+    display: flex;
 
-      top: 100%;
-      left: 0;
-      right: 0;
+    width: 42px;
+    height: 42px;
 
-      display: none;
+    margin-left: auto;
+}
 
-      flex-direction: column;
-      align-items: stretch;
+    .nav-content {
+        position: absolute;
 
-      width: 100%;
+        top: 100%;
+        left: 0;
+        right: 0;
 
-      padding: 20px;
+        display: none;
 
-      background: #fff;
+        flex-direction: column;
+        align-items: stretch;
 
-      box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+        width: 100%;
 
-      z-index: 1000;
-   }
+        padding: 20px;
 
-   .nav-content.open {
-      display: flex;
-   }
+        background: #fff;
 
-   .nav-content a {
-      width: 100%;
-      padding: 10px 0;
-   }
+        box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
 
-   .nav-cta {
-      display: none;
-   }
+        z-index: 1000;
+    }
+
+    .nav-content.open {
+        display: flex;
+    }
+
+    .nav-content a {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-cta {
+        display: none;
+    }
 
 
-   /* =========================
+    /* =========================
        HERO
     ========================= */
 
-   .hero {
-      min-height: 85vh;
-   }
+    .hero {
+        min-height: 85vh;
+    }
 
-   .hero-copy {
-      max-width: 600px;
-      padding: 80px 0;
-   }
+    .hero-copy {
+        max-width: 600px;
+        padding: 80px 0;
+    }
 
 
-   /* =========================
+    /* =========================
        SERVIÇOS
     ========================= */
 
-   .service-grid {
-      grid-template-columns: 1fr;
-   }
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-image1,
+    .service-image2 {
+        height: 280px;
+    }
 
 
-   .service-image1,
-   .service-image2 {
-      height: 280px;
-   }
-
-
-   /* =========================
+    /* =========================
        METODOLOGIA
     ========================= */
 
-   .steps-grid {
-      grid-template-columns: repeat(2, 1fr);
-   }
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
 
-   /* =========================
+    /* =========================
        DEPOIMENTOS
     ========================= */
 
-   .testimonial-grid {
-      grid-template-columns: 1fr;
-   }
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
 
 
-   /* =========================
+    /* =========================
        CONTATO
     ========================= */
 
-   .contact-grid {
-      grid-template-columns: 1fr;
-      gap: 40px;
-   }
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 
-   .lado-esquerdo {
-      grid-template-columns: 1fr;
-   }
+    .lado-esquerdo {
+        grid-template-columns: 1fr;
+    }
 
-   .botoes a.consultoria {
-      width: 100%;
-      min-height: 300px;
-   }
+    .botoes  {
+        width: 100%;
+        min-height: 300px;
+        align-items: center;
+    }
+    .consultoria{
+      align-items: center;
+      justify-content: center;
+    }
 
 
-   /* =========================
+    /* =========================
        FORMULÁRIO
     ========================= */
 
-   .form-card {
-      padding: 35px;
-   }
+    .form-card {
+        padding: 35px;
+    }
 
 
-   /* =========================
+    /* =========================
        FOOTER
     ========================= */
 
-   .footer-content {
-      flex-direction: column;
-      text-align: center;
-   }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
 
 
-   /* ========================================================
+    /* =========================
        MODAL
-    ======================================================== */
+    ========================= */
 
-   .modal-container {
-      width: 92vw;
-      height: 90vh;
+    .modal-container {
+        width: 92vw;
+        max-width: 92vw;
 
-      display: flex;
-      flex-direction: column;
+        height: 90vh;
+        max-height: 90vh;
 
-      overflow-y: auto;
-   }
+        display: flex;
+        flex-direction: column;
 
+        overflow-x: hidden;
+        overflow-y: auto;
 
-   .img-presencial,
-   .img-online {
-      width: 100%;
-      height: 260px;
-      min-height: 260px;
+        box-sizing: border-box;
+    }
 
-      flex-shrink: 0;
-   }
+    .img-presencial,
+    .img-online {
+        width: 100%;
+        max-width: 100%;
 
+        height: 260px;
+        min-height: 260px;
 
-   .modal-content {
-      width: 100%;
-      padding: 35px;
-   }
+        flex-shrink: 0;
 
+        box-sizing: border-box;
+    }
 
-   .superior h1 {
-      font-size: 2.5rem;
-   }
+    .modal-content {
+        width: 100%;
+        max-width: 100%;
 
+        padding: 35px;
 
-   .meio {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 30px 25px;
-   }
+        box-sizing: border-box;
 
+        overflow-x: hidden;
+    }
 
-   .conteudo {
-      min-width: 0;
-   }
+    .superior h1 {
+        font-size: 2.5rem;
+    }
 
+    .meio {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 25px;
+    }
 
-   .conteudo img {
-      width: 20px;
-   }
+    .conteudo {
+        min-width: 0;
+    }
 
+    .conteudo img {
+        width: 20px;
+    }
 
-   .botao {
-      gap: 20px;
-   }
+    .botao {
+        gap: 20px;
+    }
 }
 
 
@@ -1264,314 +1283,401 @@ textarea:focus {
 
 @media (max-width: 600px) {
 
-   /* =========================
+    /* =========================
        CONTAINER
     ========================= */
 
-   .container {
-      width: min(calc(100% - 32px), var(--max));
-   }
+    .container {
+        width: min(calc(100% - 32px), var(--max));
+    }
 
 
-   /* =========================
+    /* =========================
        HEADER
     ========================= */
 
-   .navigation {
-      min-height: 76px;
-      padding: 0 16px;
-   }
+    .navigation {
+        min-height: 76px;
+        padding: 0 16px;
+    }
 
-   .brand img {
-      height: 62px;
-   }
+    .brand img {
+        height: 62px;
+    }
+
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
+    }
 
 
-   .menu-toggle {
-      width: 42px;
-      height: 42px;
-   }
-
-
-   /* =========================
+    /* =========================
        HERO
     ========================= */
 
-   .hero {
-      min-height: 80vh;
-   }
+    .hero {
+        min-height: 80vh;
+    }
 
-   .hero-copy {
-      padding: 60px 0;
-   }
+    .hero-copy {
+        padding: 60px 0;
+    }
 
-   .hero h1 {
-      font-size: clamp(46px, 14vw, 68px);
-   }
+    .hero h1 {
+        font-size: clamp(46px, 14vw, 68px);
+    }
 
-   .lead {
-      font-size: 16px;
-   }
+    .lead {
+        font-size: 16px;
+    }
 
-   .button-hero {
-      margin-right: 0;
-   }
+    .button-hero {
+        margin-right: 0;
+    }
+
+    /* Centraliza a imagem do hero no celular */
+    .hero-background {
+        background-position: 50% 50%;
+    }
 
 
-   /* =========================
+    /* =========================
        SEÇÕES
     ========================= */
 
-   section {
-      padding: 64px 0;
-   }
+    section {
+        padding: 64px 0;
+    }
 
-   .section-title {
-      font-size: clamp(40px, 11vw, 52px);
-   }
+    .section-title {
+        font-size: clamp(40px, 11vw, 52px);
+    }
 
-   .section-title.center {
-      margin-bottom: 35px;
-   }
+    .section-title.center {
+        margin-bottom: 35px;
+    }
 
 
-   /* =========================
+    /* =========================
        SERVIÇOS
     ========================= */
 
-   .service-grid {
-      grid-template-columns: 1fr;
-   }
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
 
-   .service-image1,
-   .service-image2 {
-      height: 230px;
-   }
+    .service-image1,
+    .service-image2 {
+        height: 230px;
+    }
 
-   .service-body {
-      padding: 20px;
-      gap: 20px;
-   }
+    .service-body {
+        padding: 20px;
+        gap: 20px;
+    }
 
-   .service-body p,
-   .testimonial>p {
-      font-size: 16px;
-   }
+    .service-body p,
+    .testimonial > p {
+        font-size: 16px;
+    }
 
 
-   /* =========================
+    /* =========================
        METODOLOGIA
     ========================= */
 
-   .steps-grid {
-      grid-template-columns: 1fr;
-   }
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
 
-   .step {
-      min-height: auto;
-      padding: 22px;
-   }
+    .step {
+        min-height: auto;
+        padding: 22px;
+    }
 
 
-   /* =========================
+    /* =========================
        FILOSOFIA
     ========================= */
 
-   .philosophy {
-      min-height: 55vh;
-   }
+    .philosophy {
+        min-height: 55vh;
+    }
 
-   .philosophy blockquote {
-      font-size: 16px;
-   }
+    .philosophy blockquote {
+        font-size: 16px;
+    }
 
-   .icon {
-      font-size: 56px;
-   }
+    .icon {
+        font-size: 56px;
+    }
 
 
-   /* =========================
+    /* =========================
        DEPOIMENTOS
     ========================= */
 
-   .testimonial-grid {
-      grid-template-columns: 1fr;
-   }
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
 
-   .testimonial {
-      padding: 20px;
-   }
+    .testimonial {
+        padding: 20px;
+    }
 
 
-   /* =========================
+    /* =========================
        CONTATO
     ========================= */
 
-   .contact-grid {
-      grid-template-columns: 1fr;
-      gap: 30px;
-   }
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 
-   .lado-esquerdo {
-      grid-template-columns: 1fr;
-   }
+    .lado-esquerdo {
+        grid-template-columns: 1fr;
+    }
 
-   .contact-actions {
-      flex-direction: column;
-   }
+    .contact-actions {
+        flex-direction: column;
+        align-items: center;
+    }
 
-   .botoes {
-      width: 100%;
-   }
+    .botoes {
+        width: 100%;
 
-   .botoes a {
-      width: 100%;
-   }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-   .botoes a.consultoria {
-      width: 100%;
-      min-height: 220px;
-      padding: 20px;
-      font-size: 26px;
-   }
+    .botoes a {
+        width: 100%;
+    }
+
+    /* CONSULTORIA MFIT CENTRALIZADA */
+
+    .botoes a.consultoria {
+        width: 90%;
+        max-width: 350px;
+
+        min-height: 220px;
+
+        padding: 20px;
+
+        font-size: 26px;
+
+        box-sizing: border-box;
+    }
 
 
-   /* =========================
+    /* =========================
        FORMULÁRIO
     ========================= */
 
-   .form-card {
-      padding: 24px;
-   }
+    .form-card {
+        padding: 24px;
+    }
 
 
-   /* ========================================================
+    /* =========================
        MODAL
-    ======================================================== */
+    ========================= */
 
-   .modal-container {
-      width: 94vw;
-      height: 92vh;
-      max-height: 92vh;
-   }
+    .modal-container {
+        width: 94vw;
+        max-width: 94vw;
 
+        height: 92vh;
+        max-height: 92vh;
 
-   .img-presencial,
-   .img-online {
-      width: 100%;
-      height: 210px;
-      min-height: 210px;
-   }
+        display: flex;
+        flex-direction: column;
 
+        overflow-x: hidden;
+        overflow-y: auto;
 
-   .modal-content {
-      width: 100%;
-      padding: 30px 22px 25px;
-   }
+        box-sizing: border-box;
+    }
 
 
-   .superior h1 {
-      font-size: 2.2rem;
-      line-height: 1.05;
-   }
+    /* =========================
+       IMAGEM DO MODAL
+    ========================= */
+
+    .img-presencial,
+    .img-online {
+        width: 100%;
+        max-width: 100%;
+
+        height: 210px;
+        min-height: 210px;
+
+        flex-shrink: 0;
+
+        box-sizing: border-box;
+    }
 
 
-   .superior span {
-      width: 45px;
-      height: 4px;
-      margin: 20px 0;
-   }
+    /* =========================
+       CONTEÚDO DO MODAL
+    ========================= */
+
+    .modal-content {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 30px 22px 25px;
+
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+    }
+
+    .superior {
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
+    }
+
+    .superior h1 {
+        max-width: 100%;
+
+        font-size: 2.2rem;
+        line-height: 1.05;
+
+        overflow-wrap: break-word;
+    }
+
+    .superior span {
+        width: 45px;
+        height: 4px;
+
+        margin: 20px 0;
+    }
 
 
-   /*
-       Aqui está uma mudança importante:
-       o seu .meio usa minmax(240px, 1fr).
-       Em celular isso pode causar overflow.
+    /* =========================
+       CONTEÚDO / BENEFÍCIOS
+    ========================= */
 
-       Por isso zeramos o mínimo.
-    */
+    .meio {
+        width: 100%;
+        max-width: 100%;
 
-   .meio {
-      grid-template-columns: 1fr;
-      gap: 25px;
+        grid-template-columns: 1fr;
 
-      margin-top: 35px;
-      margin-bottom: 35px;
-   }
+        gap: 25px;
+
+        margin-top: 35px;
+        margin-bottom: 35px;
+
+        box-sizing: border-box;
+    }
+
+    .conteudo {
+        width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+
+        gap: 12px;
+
+        box-sizing: border-box;
+    }
+
+    .conteudo img {
+        width: 20px;
+        max-width: 20px;
+
+        flex-shrink: 0;
+    }
+
+    .conteudo h2 {
+        min-width: 0;
+
+        font-size: 1rem;
+        line-height: 1.2;
+
+        overflow-wrap: break-word;
+    }
+
+    .conteudo p.meio {
+        min-width: 0;
+
+        font-size: .9rem;
+        line-height: 1.5;
+
+        overflow-wrap: anywhere;
+    }
 
 
-   .conteudo {
-      gap: 12px;
-   }
-
-
-   .conteudo img {
-      width: 20px;
-   }
-
-
-   .conteudo h2 {
-      font-size: 1rem;
-      line-height: 1.2;
-   }
-
-
-   .conteudo p.meio {
-      font-size: .9rem;
-      line-height: 1.5;
-   }
-
-
-   /* =========================
+    /* =========================
        BOTÃO DO MODAL
     ========================= */
 
-   .botao {
-      flex-direction: column;
-      align-items: stretch;
+    .botao {
+        width: 100%;
+        max-width: 100%;
 
-      gap: 15px;
+        flex-direction: column;
+        align-items: stretch;
 
-      padding-top: 25px;
-   }
+        gap: 15px;
+
+        padding-top: 25px;
+
+        box-sizing: border-box;
+    }
+
+    .comecar-agora {
+        width: 100%;
+        max-width: 100%;
+
+        height: 58px;
+
+        box-sizing: border-box;
+    }
+
+    .botao p.rodape {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        text-align: center;
+
+        font-size: .7rem;
+        line-height: 1.4;
+
+        overflow-wrap: break-word;
+    }
 
 
-   .comecar-agora {
-      width: 100%;
-      height: 58px;
-   }
-
-
-   .botao p.rodape {
-      margin: 0;
-      text-align: center;
-      font-size: .7rem;
-      line-height: 1.4;
-   }
-
-
-   /* =========================
-       FECHAR MODAL
+    /* =========================
+       BOTÃO FECHAR MODAL
     ========================= */
 
-   .close-modal {
-      top: 10px;
-      right: 10px;
+    .close-modal {
+        top: 10px;
+        right: 10px;
 
-      width: 36px;
-      height: 36px;
+        width: 36px;
+        height: 36px;
 
-      z-index: 20;
-   }
+        z-index: 20;
+    }
 
 
-   /* =========================
+    /* =========================
        FOOTER
     ========================= */
 
-   .footer-content {
-      padding-block: 35px;
-   }
+    .footer-content {
+        padding-block: 35px;
+    }
 }
 
 
@@ -1582,112 +1688,134 @@ textarea:focus {
 
 @media (max-width: 400px) {
 
-   /* =========================
+    /* =========================
        HEADER
     ========================= */
 
-   .brand img {
-      height: 56px;
-   }
+    .brand img {
+        height: 56px;
+    }
 
 
-   /* =========================
+    /* =========================
        HERO
     ========================= */
 
-   .hero h1 {
-      font-size: 46px;
-   }
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .lead {
+        font-size: 15px;
+    }
 
 
-   .lead {
-      font-size: 15px;
-   }
-
-
-   /* =========================
+    /* =========================
        SEÇÕES
     ========================= */
 
-   section {
-      padding: 55px 0;
-   }
+    section {
+        padding: 55px 0;
+    }
+
+    .section-title {
+        font-size: 38px;
+    }
 
 
-   .section-title {
-      font-size: 38px;
-   }
-
-
-   /* =========================
+    /* =========================
        SERVIÇOS
     ========================= */
 
-   .service-image1,
-   .service-image2 {
-      height: 200px;
-   }
+    .service-image1,
+    .service-image2 {
+        height: 200px;
+    }
+
+    .service-image1 h3,
+    .service-image2 h3 {
+        font-size: 27px;
+    }
 
 
-   .service-image1 h3,
-   .service-image2 h3 {
-      font-size: 27px;
-   }
-
-
-   /* =========================
+    /* =========================
        CONTATO
     ========================= */
 
-   .botoes a.consultoria {
-      min-height: 190px;
-      font-size: 24px;
-   }
+    .botoes {
+        align-items: center;
+    }
+
+    .botoes a.consultoria {
+        width: 90%;
+        max-width: 320px;
+
+        min-height: 190px;
+
+        font-size: 24px;
+    }
 
 
-   /* =========================
+    /* =========================
        MODAL
     ========================= */
 
-   .modal-container {
-      width: 96vw;
-      height: 94vh;
-   }
+    .modal-container {
+        width: 96vw;
+        max-width: 96vw;
+
+        height: 94vh;
+        max-height: 94vh;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .img-presencial,
+    .img-online {
+        width: 100%;
+        max-width: 100%;
+
+        height: 180px;
+        min-height: 180px;
+    }
+
+    .modal-content {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 25px 18px 20px;
+
+        overflow-x: hidden;
+    }
+
+    .superior h1 {
+        font-size: 1.85rem;
+    }
+
+    .meio {
+        gap: 22px;
+    }
+
+    .conteudo h2 {
+        font-size: .95rem;
+    }
+
+    .conteudo p.meio {
+        font-size: .82rem;
+    }
+
+    .comecar-agora {
+        height: 54px;
+    }
+}
 
 
-   .img-presencial,
-   .img-online {
-      height: 180px;
-      min-height: 180px;
-   }
 
+/* ============================================================
+   PROTEÇÃO CONTRA OVERFLOW HORIZONTAL DO MODAL
+============================================================ */
 
-   .modal-content {
-      padding: 25px 18px 20px;
-   }
-
-
-   .superior h1 {
-      font-size: 1.85rem;
-   }
-
-
-   .meio {
-      gap: 22px;
-   }
-
-
-   .conteudo h2 {
-      font-size: .95rem;
-   }
-
-
-   .conteudo p.meio {
-      font-size: .82rem;
-   }
-
-
-   .comecar-agora {
-      height: 54px;
-   }
+.modal {
+    overflow-x: hidden;
 }
