@@ -867,11 +867,17 @@ section {
 }
 
 .texture {
-   position: absolute;
-   inset: 0;
-   opacity: .2;
-   background-color: #0a0a0a;
-   background-image: repeating-linear-gradient(45deg, #2a2a2a 0 2px, transparent 2px 10px);
+    position: absolute;
+    inset: 0;
+
+    background-color: #0a0a0a;
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(42, 42, 42, 0.1) 0 2px,
+        transparent 2px 10px
+    );
+
+    pointer-events: none;
 }
 
 .philosophy-content {
