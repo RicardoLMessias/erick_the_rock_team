@@ -1344,10 +1344,11 @@ textarea:focus {
       box-sizing: border-box;
    }
 
-   .img-presencial,
    .img-online {
       width: 100%;
       max-width: 100%;
+
+      background-position: center 30%;
 
       height: 260px;
       min-height: 260px;
@@ -1355,6 +1356,21 @@ textarea:focus {
       flex-shrink: 0;
 
       box-sizing: border-box;
+   }
+
+   .img-presencial{
+       width: 100%;
+      max-width: 100%;
+
+      background-position: center 15%;
+
+      height: 260px;
+      min-height: 260px;
+
+      flex-shrink: 0;
+
+      box-sizing: border-box;
+
    }
 
    .modal-content {
@@ -1621,10 +1637,12 @@ textarea:focus {
        IMAGEM DO MODAL
     ========================= */
 
-   .img-presencial,
+   
    .img-online {
       width: 100%;
       max-width: 100%;
+
+      background-position: center 30%;
 
       height: 210px;
       min-height: 210px;
@@ -1632,6 +1650,21 @@ textarea:focus {
       flex-shrink: 0;
 
       box-sizing: border-box;
+   }
+
+   .img-presencial{
+       width: 100%;
+      max-width: 100%;
+
+      background-position: center 15%;
+
+      height: 210px;
+      min-height: 210px;
+
+      flex-shrink: 0;
+
+      box-sizing: border-box;
+
    }
 
 
@@ -1890,13 +1923,35 @@ textarea:focus {
       overflow-y: auto;
    }
 
-   .img-presencial,
+   
+
    .img-online {
       width: 100%;
       max-width: 100%;
 
+      background-position: center 30%;
+
       height: 180px;
       min-height: 180px;
+
+      flex-shrink: 0;
+
+      box-sizing: border-box;
+   }
+
+   .img-presencial{
+       width: 100%;
+      max-width: 100%;
+
+      background-position: center 15%;
+
+      height: 180px;
+      min-height: 180px;
+
+      flex-shrink: 0;
+
+      box-sizing: border-box;
+
    }
 
    .modal-content {
