@@ -45,6 +45,94 @@ form.addEventListener('submit', (event) => {
 });
 
 
+// loader + animação de entrada do site
+let progress = 0;
+
+const bar = document.getElementById("progress-bar");
+const loader = document.getElementById("loader");
+const content = document.getElementById("content");
+const loaderImage = document.querySelector(".loader-image");
+const progressContainer = document.querySelector(".progress-container");
+
+const interval = setInterval(() => {
+  progress += Math.random() * 10;
+
+  if (progress >= 100) {
+    progress = 100;
+    clearInterval(interval);
+  }
+
+  // Atualiza a barra.
+  bar.style.width = `${progress}%`;
+  progressContainer.setAttribute("aria-valuenow", Math.round(progress));
+
+  // Converte 0–100 em 0–1.
+  const opacity = progress / 100;
+
+  // A imagem aparece progressivamente.
+  loaderImage.style.setProperty("--load-opacity", opacity);
+
+  // Pisca muito rápido no início e desacelera gradualmente.
+  const blinkDuration = 0.16 + (opacity * opacity * 1.24);
+  loaderImage.style.setProperty("--blink-duration", `${blinkDuration}s`);
+
+  // O piscar fica cada vez mais sutil até desaparecer.
+  const blinkMinOpacity = 0.3 + (opacity * 0.7);
+  loaderImage.style.setProperty("--blink-min-opacity", blinkMinOpacity);
+
+  if (progress === 100) {
+    // Imagem totalmente visível e sem piscar.
+    loaderImage.classList.add("carregado");
+
+    setTimeout(() => {
+      loader.classList.add("fade-out");
+
+      setTimeout(() => {
+        loader.style.display = "none";
+        content.classList.add("show");
+      }, 900);
+    }, 1500);
+  }
+}, 200);
+
+if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const sections = gsap.utils.toArray("main > section");
+
+    sections.forEach((section) => {
+        const internalItems = section.querySelectorAll(
+            ":scope > div, .texto > *, .live > *, .part-titulo > *, .partners > *, .mediakit-content > *, .contato-content > *, .contato-footer > *"
+        );
+
+        if (internalItems.length) {
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    markers: false,
+                    scrub: 3,
+                    end: "center center",
+                    toggleActions: "play none none reverse",
+                    invalidateOnRefresh: true
+                }
+            }).fromTo(internalItems,
+                { y: 64,
+                    opacity: 0
+                 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power2.out",
+                    stagger: 0.02
+                }
+            );
+        }
+    });
+}
+
+
 
 const btn = document.querySelector(".content-dev");
 const text = document.querySelector(".desenvolvido");
