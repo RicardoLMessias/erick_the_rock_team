@@ -40,7 +40,7 @@ const form = document.querySelector('#contact-form');
 const status = document.querySelector('.form-status');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    status.textContent = 'Mensagem enviada! Em breve entraremos em contato.';
+    status.textContent = 'MENSAGEM NÃO FOI ENVIADA, FORMULARIO EM CONSTRUÇÃO';
     form.reset();
 });
 
