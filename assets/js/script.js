@@ -36,12 +36,61 @@ document.querySelectorAll('.inquiry-button').forEach((button) => {
 });
 
 // Simula o envio sem recarregar a página nem depender de um serviço externo.
+// Envio do formulário através da Vercel Function + Resend.
 const form = document.querySelector('#contact-form');
 const status = document.querySelector('.form-status');
-form.addEventListener('submit', (event) => {
+
+form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    status.textContent = 'MENSAGEM NÃO FOI ENVIADA, FORMULARIO EM CONSTRUÇÃO ENTRE EM CONTATO PELO WHATSAPP OU INSTAGRAM';
-    form.reset();
+
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    // Evita múltiplos envios
+    if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'ENVIANDO...';
+    }
+
+    status.textContent = '';
+
+    const formData = new FormData(form);
+
+    const dados = {
+        nome: formData.get('nome'),
+        email: formData.get('email'),
+        celular: formData.get('celular'),
+        mensagem: formData.get('mensagem')
+    };
+
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dados)
+        });
+
+        const resultado = await response.json();
+
+        if (!response.ok || !resultado.success) {
+            throw new Error(resultado.message || 'Erro ao enviar formulário.');
+        }
+
+        status.textContent = 'MENSAGEM ENVIADA COM SUCESSO!';
+        form.reset();
+
+    } catch (error) {
+        console.error('Erro ao enviar formulário:', error);
+
+        status.textContent =
+            'NÃO FOI POSSÍVEL ENVIAR A MENSAGEM. TENTE NOVAMENTE OU ENTRE EM CONTATO PELO WHATSAPP.';
+    } finally {
+        if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = 'ENVIAR MENSAGEM';
+        }
+    }
 });
 
 
