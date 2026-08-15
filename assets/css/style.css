@@ -1164,6 +1164,544 @@ textarea:focus {
    text-align: center;
 }
 
+
+/* =========================================================
+   GALERIA DE TRANSFORMAÇÕES
+========================================================= */
+
+#transformacoes {
+    width: 100%;
+    
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 140px 0 180px;
+
+    background: #120504;
+    overflow: hidden;
+}
+
+.transformacoes-header {
+   width: 100%;
+   margin-bottom: 35px;
+   text-align: center;
+}
+
+.transformacoes-header h2 {
+   margin: 0;
+   color: #fff;
+   font: italic 400 48px/.98 "Bebas Neue", sans-serif;
+   letter-spacing: .02em;
+   text-transform: uppercase;
+}
+
+.transformacoes-header h2 span {
+   color: var(--coral);
+}
+
+.galeria-wrapper {
+   width: 92%;
+   max-width: 1200px;
+}
+
+.galeria-viewport {
+   width: 100%;
+   overflow: hidden;
+}
+
+.galeria-track {
+   display: flex;
+   gap: 14px;
+   will-change: transform;
+}
+
+.transformacao-card {
+   position: relative;
+   flex: 0 0 calc((100% - 28px) / 3);
+   aspect-ratio: 1 / 1;
+   overflow: hidden;
+   border: 1px solid rgba(255, 85, 64, .45);
+   background: #080808;
+   cursor: pointer;
+   will-change: transform;
+}
+
+.transformacao-imagem {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+
+.transformacao-imagem img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   filter: grayscale(100%);
+   will-change: transform, filter;
+}
+
+.transformacao-imagem::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   z-index: 2;
+   background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, .12),
+      rgba(0, 0, 0, .06) 45%,
+      rgba(0, 0, 0, .88) 100%
+   );
+   pointer-events: none;
+}
+
+.transformacao-divisao {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 50%;
+   z-index: 3;
+   width: 1px;
+   background: rgba(255, 255, 255, .5);
+   pointer-events: none;
+}
+
+.transformacao-info {
+   position: absolute;
+   top: 14px;
+   left: 14px;
+   right: 14px;
+   z-index: 5;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   gap: 12px;
+   pointer-events: none;
+}
+
+.transformacao-info h3 {
+   margin: 0;
+   color: #fff;
+   font: 400 24px/1 "Bebas Neue", sans-serif;
+   letter-spacing: .04em;
+   text-transform: uppercase;
+}
+
+.transformacao-info span {
+   color: #fff;
+   font: 700 13px/1.4 "JetBrains Mono", monospace;
+   letter-spacing: .06em;
+   text-align: right;
+   text-transform: uppercase;
+   white-space: nowrap;
+}
+
+.transformacao-resultado {
+   position: absolute;
+   bottom: 15px;
+   left: 14px;
+   right: 14px;
+   z-index: 5;
+   color: var(--coral);
+   font: 700 11px/1.4 "JetBrains Mono", monospace;
+   letter-spacing: .08em;
+   text-transform: uppercase;
+   pointer-events: none;
+}
+
+.galeria-controles {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 14px;
+   margin-top: 28px;
+}
+
+.controle-prev,
+.controle-next {
+   width: 32px;
+   height: 32px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0;
+   border: 1px solid rgba(255, 85, 64, .75);
+   background: transparent;
+   color: var(--coral);
+   font: 400 22px/1 "Bebas Neue", sans-serif;
+   cursor: pointer;
+   transition: background .3s ease, color .3s ease, border-color .3s ease;
+}
+
+.controle-prev:hover,
+.controle-next:hover {
+   background: var(--coral);
+   border-color: var(--coral);
+   color: #fff;
+}
+
+.galeria-indicadores {
+   display: flex;
+   align-items: center;
+   gap: 4px;
+}
+
+.galeria-indicador {
+   width: 22px;
+   height: 2px;
+   background: rgba(255, 255, 255, .25);
+   transition: width .4s ease, background .4s ease;
+}
+
+.galeria-indicador.active {
+   width: 32px;
+   background: var(--coral);
+}
+
+/* =========================================================
+   MODAL DA GALERIA
+========================================================= */
+
+.galeria-modal {
+   position: fixed;
+   inset: 0;
+   z-index: 99999;
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   visibility: hidden;
+   opacity: 0;
+   pointer-events: none;
+}
+
+.galeria-modal.is-open {
+   visibility: visible;
+   pointer-events: auto;
+}
+
+.galeria-modal-overlay {
+   position: absolute;
+   inset: 0;
+   background: rgba(0, 0, 0, .94);
+   backdrop-filter: blur(10px);
+}
+
+.galeria-modal-content {
+   position: relative;
+   z-index: 2;
+   width: min(1200px, 92vw);
+   min-height: min(720px, 84vh);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.modal-body {
+   width: 100%;
+   max-height: 84vh;
+   display: grid;
+   grid-template-columns: minmax(0, 1fr) 320px;
+   border: 1px solid rgba(255, 85, 64, .28);
+   background: #0d0d0d;
+   overflow: hidden;
+   box-shadow: 0 30px 90px rgba(0, 0, 0, .55);
+}
+
+.modal-imagem-wrapper {
+   position: relative;
+   min-width: 0;
+   height: min(78vh, 760px);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+   background: #050505;
+}
+
+.modal-imagem {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+   opacity: 1;
+   will-change: transform, opacity, filter;
+}
+
+.modal-transformacao-info {
+   min-width: 0;
+   padding: 42px 30px 34px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   border-left: 1px solid rgba(255, 85, 64, .22);
+   background: linear-gradient(180deg, #151515, #0b0b0b);
+}
+
+.modal-processo {
+   margin: 0 0 10px;
+   color: var(--coral);
+   font: 700 11px/1.5 "JetBrains Mono", monospace;
+   letter-spacing: .12em;
+   text-transform: uppercase;
+}
+
+.modal-aluna {
+   margin: 0 0 32px;
+   color: #fff;
+   font: italic 400 52px/.95 "Bebas Neue", sans-serif;
+   letter-spacing: .03em;
+   text-transform: uppercase;
+}
+
+.modal-dados {
+   display: grid;
+   grid-template-columns: 1fr auto 1fr;
+   align-items: center;
+   gap: 14px;
+   padding-top: 22px;
+   border-top: 1px solid rgba(255, 255, 255, .12);
+}
+
+.modal-dado {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+.modal-dado span {
+   color: var(--muted);
+   font: 700 9px/1.4 "JetBrains Mono", monospace;
+   letter-spacing: .1em;
+   text-transform: uppercase;
+}
+
+.modal-dado strong {
+   color: #fff;
+   font: 400 34px/1 "Bebas Neue", sans-serif;
+   letter-spacing: .03em;
+}
+
+.modal-seta-peso {
+   color: var(--coral);
+   font-size: 24px;
+}
+
+/* =========================================================
+   BOTÕES DO MODAL
+========================================================= */
+
+.modal-fechar,
+.modal-anterior,
+.modal-proxima {
+    position: absolute;
+    z-index: 10;
+
+    padding: 0;
+    margin: 0;
+
+    display: grid;
+    place-items: center;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255, 255, 255, .35);
+    background: rgba(0, 0, 0, .65);
+
+    color: #fff;
+
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1;
+
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+
+/* =========================================================
+   FECHAR
+========================================================= */
+
+.modal-fechar {
+    top: -18px;
+    right: -18px;
+
+    width: 48px;
+    height: 48px;
+
+    font-size: 26px;
+
+    /* ajuste visual do × */
+    padding-bottom: 2px;
+}
+
+
+/* =========================================================
+   SETAS
+========================================================= */
+
+.modal-anterior,
+.modal-proxima {
+    top: 50%;
+
+    width: 50px;
+    height: 50px;
+
+    font-size: 30px;
+
+    transform: translateY(-50%);
+
+    /* corrige o alinhamento visual de ‹ e › */
+    padding-bottom: 4px;
+}
+
+
+/* mantém exatamente as posições que você escolheu */
+
+.modal-anterior {
+    left: -70px;
+}
+
+.modal-proxima {
+    right: -70px;
+}
+
+.modal-contador {
+   position: absolute;
+   bottom: -32px;
+   left: 50%;
+   z-index: 10;
+   transform: translateX(-50%);
+   color: rgba(255, 255, 255, .7);
+   font: 700 11px/1 "JetBrains Mono", monospace;
+   letter-spacing: .14em;
+}
+
+@media (max-width: 900px) {
+   .transformacao-card {
+      flex: 0 0 calc((100% - 14px) / 2);
+   }
+
+   .galeria-modal-content {
+      width: 90vw;
+   }
+
+   .modal-body {
+      grid-template-columns: 1fr;
+      max-height: 88vh;
+      overflow-y: auto;
+   }
+
+   .modal-imagem-wrapper {
+      height: min(58vh, 600px);
+   }
+
+   .modal-transformacao-info {
+      padding: 28px 24px;
+      border-left: 0;
+      border-top: 1px solid rgba(255, 85, 64, .22);
+   }
+
+   .modal-aluna {
+      margin-bottom: 20px;
+      font-size: 42px;
+   }
+
+   .modal-anterior {
+      left: 10px;
+   }
+
+   .modal-proxima {
+      right: 10px;
+   }
+
+   .modal-fechar {
+      top: 10px;
+      right: 10px;
+   }
+
+   .modal-contador {
+      bottom: 14px;
+   }
+}
+
+@media (max-width: 600px) {
+   #transformacoes {
+      min-height: auto;
+      padding: 70px 0;
+   }
+
+   .transformacoes-header {
+      margin-bottom: 25px;
+      padding: 0 16px;
+   }
+
+   .transformacoes-header h2 {
+      font-size: 40px;
+   }
+
+   .galeria-wrapper {
+      width: 88%;
+   }
+
+   .transformacao-card {
+      flex: 0 0 100%;
+   }
+
+   .transformacao-info h3 {
+      font-size: 21px;
+   }
+
+   .galeria-controles {
+      margin-top: 22px;
+   }
+
+   .galeria-modal-content {
+      width: 94vw;
+      min-height: auto;
+   }
+
+   .modal-body {
+      max-height: 90vh;
+   }
+
+   .modal-imagem-wrapper {
+      height: min(52vh, 500px);
+   }
+
+   .modal-transformacao-info {
+      padding: 24px 18px 52px;
+   }
+
+   .modal-aluna {
+      font-size: 36px;
+   }
+
+   .modal-dados {
+      gap: 10px;
+   }
+
+   .modal-dado strong {
+      font-size: 28px;
+   }
+
+   .modal-anterior,
+   .modal-proxima {
+      width: 42px;
+      height: 42px;
+      font-size: 28px;
+   }
+}
+
+
+
 /* ============================================================
    RESPONSIVIDADE
 ============================================================ */
