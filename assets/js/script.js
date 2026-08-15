@@ -1642,7 +1642,7 @@ function openGalleryModal(
 
     updateModalContent(
         galleryImages[
-            modalIndex
+        modalIndex
         ]
     );
 
@@ -2355,7 +2355,7 @@ function changeModalImage(
 
                     updateModalContent(
                         galleryImages[
-                            modalIndex
+                        modalIndex
                         ]
                     );
 
